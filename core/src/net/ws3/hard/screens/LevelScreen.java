@@ -1,29 +1,26 @@
 package net.ws3.hard.screens;
 
 import net.ws3.hard.HardGame;
-import net.ws3.hard.levels.Level4;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
-public class MainMenuScreen implements Screen{
+public class LevelScreen implements Screen{
 	private final HardGame game;
 	private Stage stage;
 	private Skin skin;
 	private Table table;
-	private Button playGame, leaderboard, store;
+	private TextButton textButton;
 	
-	public MainMenuScreen(HardGame gam){
+	public LevelScreen(HardGame gam){
 		this.game = gam;
 		stage = new Stage(new StretchViewport(800, 480));
 		skin = new Skin(Gdx.files.internal("uitest/uitest.json"), new TextureAtlas(Gdx.files.internal("uitest/uitest.atlas")));
@@ -31,28 +28,18 @@ public class MainMenuScreen implements Screen{
 		table = new Table();
 		table.setFillParent(true);
 		
-		playGame = new Button(skin, "play");
+		textButton = new TextButton("1", skin);
+		table.add(textButton).padRight(5).padBottom(5);
 		
-		playGame.addListener(new ClickListener(){
-			@Override
-			public void clicked(InputEvent event, float x, float y){
-				game.setScreen(new LevelScreen(game));
-			}
-		});
-		
-		table.add(playGame).padRight(10);
-		
-		leaderboard = new Button(skin, "leaderboard");
-		table.add(leaderboard).padRight(10);
-		
-		store = new Button(skin, "store");
-		table.add(store);
+		for(int i = 1; i <= 30; i++){
+			
+		}
 		
 		stage.addActor(new Image(skin, "mainmenubg"));
 		stage.addActor(table);
 		Gdx.input.setInputProcessor(stage);
 	}
-
+	
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(1, 1, 1, 1);

@@ -1,7 +1,6 @@
 package net.ws3.hard;
 
-import net.ws3.hard.levels.Level4;
-import net.ws3.hard.screens.GameScreen;
+import net.ws3.hard.screens.MainMenuScreen;
 
 import com.badlogic.gdx.Game;
 
@@ -11,8 +10,8 @@ public class HardGame extends Game {
 	public void create() {
 		Assets.loadAssets();
 		
-		//this.setScreen(new MainMenuScreen(this));
-		this.setScreen(new GameScreen(this, new Level4()));
+		this.setScreen(new MainMenuScreen(this));
+		//this.setScreen(new GameScreen(this, new Level4()));
 	}
 	
 	@Override

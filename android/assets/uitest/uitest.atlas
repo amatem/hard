@@ -1,0 +1,71 @@
+
+uitest.png
+size: 1022,923
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+leaderboard1
+  rotate: false
+  xy: 2, 255
+  size: 180, 186
+  orig: 180, 186
+  offset: 0, 0
+  index: -1
+leaderboard2
+  rotate: false
+  xy: 2, 67
+  size: 180, 186
+  orig: 180, 186
+  offset: 0, 0
+  index: -1
+level1
+  rotate: false
+  xy: 804, 506
+  size: 66, 63
+  split: 21, 21, 29, 18
+  orig: 66, 63
+  offset: 0, 0
+  index: -1
+level2
+  rotate: false
+  xy: 2, 2
+  size: 66, 63
+  split: 21, 21, 29, 19
+  orig: 66, 63
+  offset: 0, 0
+  index: -1
+mainmenubg
+  rotate: false
+  xy: 2, 443
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
+playgame1
+  rotate: false
+  xy: 184, 86
+  size: 162, 176
+  orig: 162, 176
+  offset: 0, 0
+  index: -1
+playgame2
+  rotate: false
+  xy: 184, 264
+  size: 162, 177
+  orig: 162, 177
+  offset: 0, 0
+  index: -1
+store1
+  rotate: false
+  xy: 804, 748
+  size: 218, 175
+  orig: 218, 175
+  offset: 0, 0
+  index: -1
+store2
+  rotate: false
+  xy: 804, 571
+  size: 218, 175
+  orig: 218, 175
+  offset: 0, 0
+  index: -1
