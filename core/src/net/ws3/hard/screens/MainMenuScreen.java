@@ -1,7 +1,7 @@
 package net.ws3.hard.screens;
 
 import net.ws3.hard.HardGame;
-import net.ws3.hard.levels.Level4;
+import net.ws3.hard.levels.Level9;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -36,6 +36,7 @@ public class MainMenuScreen implements Screen{
 		playGame.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
+				//game.setScreen(new GameScreen(game, new Level9()));
 				game.setScreen(new LevelScreen(game));
 			}
 		});

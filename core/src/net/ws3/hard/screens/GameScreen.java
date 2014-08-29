@@ -80,7 +80,7 @@ public class GameScreen implements Screen, InputProcessor{
 		model.savePosition();
 		
 		if(model.isEndGame())
-			game.setScreen(new DebugEndGameScreen());
+			game.setScreen(new LevelScreen(game));
 		renderer.render();
 		stage.act(delta);
 		stage.draw();
