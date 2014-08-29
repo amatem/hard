@@ -18,8 +18,9 @@ public class Level4 implements Level{
 	public void setStartPosition(Rectangle position) {
 		position.x = 412.5f;
 		position.y = 380;
-		position.width = 27;
-		position.height = 27;
+		position.width = 25;
+		position.height = 25;
+		
 	}
 
 	@Override
@@ -80,76 +81,71 @@ public class Level4 implements Level{
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		CircleWrapper circleWrapper;
+		float baseTime = 5f;
 		
 		//middle point
 		circle = new Circle();
 		circle.x = 425;
 		circle.y = 190;
-		circle.radius = 10;
-		
+		circle.radius = 7;		
 		blueCircles.add(circle);
 		
 		//right part
-		for (int i = 1 ; i < 5 ; i++)
+		for (int i = 1 ; i < 6 ; i++)
 		{
 			circle = new Circle();
-			circle.x = 425 + 30 * i;
+			circle.x = 425 + 25 * i;
 			circle.y = 190;
-			circle.radius = 10;
+			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle,425,190);
-			Tween.to(circleWrapper, CircleWrapperAccessor.R, 4f)
+			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
-		}
-		
+		}		
 		//left part
-		for (int i = 1 ; i < 5 ; i++)
+		for (int i = 1 ; i < 6 ; i++)
 		{
 			circle = new Circle();
-			circle.x = 425 - 30 * i;
+			circle.x = 425 - 25 * i;
 			circle.y = 190;
-			circle.radius = 10;
+			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle,425,190);
-			Tween.to(circleWrapper, CircleWrapperAccessor.R, 4f)
+			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
-		}
-		
+		}		
 		//top part
-		for (int i = 1 ; i < 5 ; i++)
+		for (int i = 1 ; i < 6 ; i++)
 		{
 			circle = new Circle();
 			circle.x = 425;
-			circle.y = 190 + 30*i;
-			circle.radius = 10;
+			circle.y = 190 + 25 * i;
+			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle,425,190);
-			Tween.to(circleWrapper, CircleWrapperAccessor.R, 4f)
+			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
 		}
-		
 		//bottom part
-		for (int i = 1 ; i < 5 ; i++)
+		for (int i = 1 ; i < 6 ; i++)
 		{
 			circle = new Circle();
 			circle.x = 425;
-			circle.y = 190 - 30*i;
-			circle.radius = 10;
+			circle.y = 190 - 25 * i;
+			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle,425,190);
-			Tween.to(circleWrapper, CircleWrapperAccessor.R, 4f)
+			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
 		}
-		
-		
 	}
 
 	@Override

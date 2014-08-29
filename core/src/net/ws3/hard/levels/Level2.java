@@ -18,8 +18,8 @@ public class Level2 implements Level {
 	public void setStartPosition(Rectangle position) {
 		position.x = 100;
 		position.y = 220;
-		position.width = 27;
-		position.height = 27;
+		position.width = 25;
+		position.height = 25;
 	}
 
 	@Override
@@ -54,14 +54,15 @@ public class Level2 implements Level {
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		float bot,top;
+		float baseTime = 1f;
 		bot = 130;
 		top = 320;
 		
 		circle = new Circle();
 		circle.x = 205;
 		circle.y = bot;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(top,55)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -70,8 +71,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 240;
 		circle.y = top;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(bot)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -80,8 +81,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 275;
 		circle.y = bot;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(top)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -90,8 +91,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 310;
 		circle.y = top;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(bot)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -100,8 +101,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 345;
 		circle.y = bot;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(top)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -110,8 +111,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 380;
 		circle.y = top;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(bot)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -120,8 +121,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 415;
 		circle.y = bot;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(top)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -130,8 +131,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 450;
 		circle.y = top;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(bot)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -140,8 +141,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 485;
 		circle.y = bot;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(top)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -150,8 +151,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 520;
 		circle.y = top;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(bot)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -160,8 +161,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 555;
 		circle.y = bot;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(top)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
@@ -170,8 +171,8 @@ public class Level2 implements Level {
 		circle = new Circle();
 		circle.x = 590;
 		circle.y = top;
-		circle.radius = 10;
-		Tween.to(circle, BlueCircleAccessor.Y, 1.3f)
+		circle.radius = 7;
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(bot)
 			.repeatYoyo(-1, 0f)
 			.start(manager);

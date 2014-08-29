@@ -18,8 +18,8 @@ public class Level3 implements Level {
 	public void setStartPosition(Rectangle position) {
 		position.x = 380;
 		position.y = 230;
-		position.width = 27;
-		position.height = 27;
+		position.width = 25;
+		position.height = 25;
 		
 	}
 
@@ -65,7 +65,7 @@ public class Level3 implements Level {
 		circle = new Circle();
 		circle.x = 325 + temp / 2;
 		circle.y = 310 - temp / 2 - temp;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
 			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
 			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
@@ -86,7 +86,7 @@ public class Level3 implements Level {
 		circle = new Circle();
 		circle.x = 325 + temp / 2 ;
 		circle.y = 310 - temp/2 - temp * 2;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
 			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
 			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
@@ -107,7 +107,7 @@ public class Level3 implements Level {
 		circle = new Circle();
 		circle.x = 325 + temp / 2;
 		circle.y = 310 - temp / 2 - temp * 3;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
 			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
 			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
@@ -128,154 +128,154 @@ public class Level3 implements Level {
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp;
 		circle.y = 310 - temp / 2 - temp * 3;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))	
-		.repeat(-1, 0f)
-		.start(manager);
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))	
+			.repeat(-1, 0f)
+			.start(manager);
 		blueCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp * 2;
 		circle.y = 310 - temp / 2 - temp * 3;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
-		.repeat(-1, 0f)
-		.start(manager);
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
+			.repeat(-1, 0f)
+			.start(manager);
 		blueCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp * 3;
 		circle.y = 310 - temp / 2 - temp * 3;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
-		.repeat(-1, 0f)
-		.start(manager);
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
+			.repeat(-1, 0f)
+			.start(manager);
 		blueCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp * 3;
 		circle.y = 310 - temp / 2 - temp * 2;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.repeat(-1, 0f)
-		.start(manager);
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.repeat(-1, 0f)
+			.start(manager);
 		blueCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp * 3;
 		circle.y = 310 - temp / 2 - temp;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.repeat(-1, 0f)
-		.start(manager);
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.repeat(-1, 0f)
+			.start(manager);
 		blueCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp * 3;
 		circle.y = 310 - temp / 2;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
-		.repeat(-1, 0f)
-		.start(manager);
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
+			.repeat(-1, 0f)
+			.start(manager);
 		blueCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp * 2;
 		circle.y = 310 - temp / 2;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
-		.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
-		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
-		.repeat(-1, 0f)
-		.start(manager);
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 3))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp * 2))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(310 - temp / 2))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))	
+			.repeat(-1, 0f)
+			.start(manager);
 		blueCircles.add(circle);
-		/*
+		
 		circle = new Circle();
 		circle.x = 325 + temp / 2 + temp;
 		circle.y = 310 - temp / 2;
-		circle.radius = 10;
+		circle.radius = 7;
 		Timeline.createSequence()
 		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 2))
 		.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(325 + temp / 2 + temp * 3))
@@ -292,7 +292,7 @@ public class Level3 implements Level {
 		.repeat(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);
-		
+		/*
 		circle = new Circle();
 		circle.x = 325 + temp / 2;
 		circle.y = 310 - temp / 2;
