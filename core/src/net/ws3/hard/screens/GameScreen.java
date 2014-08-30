@@ -116,7 +116,6 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void hide() {
-		dispose();
 	}
 
 	@Override
