@@ -22,8 +22,10 @@ public class HardModel {
 	private Array<Circle> tempYellowCircles;
 	private Array<MapState> mapState;
 	private TweenManager manager;
+	private int deathCount;
 	
 	public HardModel(){
+		deathCount = 0;
 		player = new Rectangle();
 		savedPosition = new Rectangle();
 		map = new Array<Rectangle>();
@@ -32,6 +34,10 @@ public class HardModel {
 		tempYellowCircles = new Array<Circle>();
 		mapState = new Array<MapState>();
 		manager = new TweenManager();
+	}
+	
+	public int getDeathCount(){
+		return deathCount;
 	}
 	
 	public TweenManager getManager(){
@@ -74,6 +80,7 @@ public class HardModel {
 	}
 	
 	public void respawn(){
+		deathCount++;
 		player.x = savedPosition.x;
 		player.y = savedPosition.y;
 		

@@ -1,8 +1,6 @@
 package net.ws3.hard.levels;
 
 import net.ws3.hard.BlueCircleAccessor;
-import net.ws3.hard.CircleWrapperAccessor;
-import net.ws3.hard.model.CircleWrapper;
 import net.ws3.hard.model.HardModel;
 import net.ws3.hard.model.HardModel.MapState;
 import net.ws3.hard.model.Level;
@@ -66,7 +64,6 @@ public class Level1 implements Level{
 	@Override
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
-		CircleWrapper circleWrapper;
 		float baseTime = 1f;
 		
 		circle = new Circle();

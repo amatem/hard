@@ -17,11 +17,15 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad.TouchpadStyle;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
@@ -35,6 +39,9 @@ public class GameScreen implements Screen, InputProcessor{
 	private Skin touchpadSkin;
 	private Touchpad touchpad;
 	private TouchpadStyle touchpadStyle;
+	private Label deathCount;
+	private Button soundButton;
+	private Skin skin;
 	
 	public GameScreen(HardGame game, Level level){
 		this.game = game;
@@ -58,6 +65,16 @@ public class GameScreen implements Screen, InputProcessor{
 		stage = new Stage(new StretchViewport(800, 480));
 		stage.addActor(touchpad);
 		
+		skin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
+		
+		deathCount = new Label("" + model.getDeathCount(), skin, "deathCount");
+		deathCount.setAlignment(Align.center);
+		deathCount.setBounds(0, 401, 61, 79);
+		stage.addActor(deathCount);
+		
+		soundButton = new Button(skin, "sound");
+		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
+		stage.addActor(soundButton);
 		
 		im = new InputMultiplexer();
 		Array<InputProcessor> processors = new Array<InputProcessor>();
@@ -78,6 +95,7 @@ public class GameScreen implements Screen, InputProcessor{
 		model.collisionControl();
 		model.eatYellowFuckers();
 		model.savePosition();
+		deathCount.setText("" + model.getDeathCount());
 		
 		if(model.isEndGame())
 			game.setScreen(new LevelScreen(game));
@@ -98,7 +116,7 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void hide() {
-		Gdx.input.setInputProcessor(null);
+		dispose();
 	}
 
 	@Override
@@ -115,9 +133,9 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void dispose() {
-		Gdx.input.setInputProcessor(null);
 		renderer.dispose();
 		stage.dispose();
+		skin.dispose();
 		touchpadSkin.dispose();
 	}
 

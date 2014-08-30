@@ -1,5 +1,9 @@
 package net.ws3.hard.levels;
 
+import net.ws3.hard.BlueCircleAccessor;
+import net.ws3.hard.model.HardModel;
+import net.ws3.hard.model.HardModel.MapState;
+import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Timeline;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
@@ -7,12 +11,6 @@ import aurelienribon.tweenengine.TweenManager;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
-
-import net.ws3.hard.BlueCircleAccessor;
-import net.ws3.hard.model.HardModel.MapState;
-import net.ws3.hard.model.CircleWrapper;
-import net.ws3.hard.model.HardModel;
-import net.ws3.hard.model.Level;
 
 public class Level8 implements Level{
 
@@ -142,9 +140,6 @@ public class Level8 implements Level{
 		rect.width = 70;
 		rect.height = 70;
 		map.add(rect);
-		
-		
-		
 	}
 
 	@Override
@@ -230,8 +225,5 @@ public class Level8 implements Level{
 		mapState.add(HardModel.MapState.PLAIN);
 		mapState.add(HardModel.MapState.PLAIN);
 		mapState.add(HardModel.MapState.FINISH);
-		
-		
 	}
-
 }

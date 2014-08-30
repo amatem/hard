@@ -120,6 +120,7 @@ public class HardRenderer {
 	
 	public void dispose(){
 		batch.dispose();
-		debugRenderer.dispose();
+		if(debug)
+			debugRenderer.dispose();
 	}
 }

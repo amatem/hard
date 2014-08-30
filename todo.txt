@@ -1,8 +1,9 @@
 - geri ve menu tusu etkilesimi eklenecek
 - oyun sonu eklenecek
 - muzikler ve vibrate eklenecek
-- death count eklenecek
+- death count eklenecek +
 - bolumler, locked bolumler, ve save eklenecek
 - swarm eklenecek
 - admob eklenecek
 - kalan bolumler eklenecek (11 - 20)
+- splash screen eklenecek

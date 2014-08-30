@@ -3,6 +3,7 @@ package net.ws3.hard;
 import net.ws3.hard.screens.MainMenuScreen;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 
 public class HardGame extends Game {
 	
@@ -11,7 +12,6 @@ public class HardGame extends Game {
 		Assets.loadAssets();
 		
 		this.setScreen(new MainMenuScreen(this));
-		//this.setScreen(new GameScreen(this, new Level4()));
 	}
 	
 	@Override
@@ -21,6 +21,7 @@ public class HardGame extends Game {
 	
 	@Override
 	public void dispose(){
+		Gdx.input.setInputProcessor(null);
 		Assets.dispose();
 	}
 }

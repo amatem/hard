@@ -1,7 +1,6 @@
 package net.ws3.hard.screens;
 
 import net.ws3.hard.HardGame;
-import net.ws3.hard.levels.Level9;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -76,8 +75,7 @@ public class MainMenuScreen implements Screen{
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
-		
+		dispose();
 	}
 
 	@Override
