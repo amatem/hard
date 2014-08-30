@@ -13,7 +13,7 @@ import net.ws3.hard.model.HardModel;
 import net.ws3.hard.model.Level;
 
 public class Level10 implements Level{
-
+//AMMAMAMAMAMAM
 	@Override
 	public void setStartPosition(Rectangle position) {
 		position.x = 335;
