@@ -142,7 +142,7 @@ public class Level5 implements Level{
 			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle, 390, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
-				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
@@ -156,7 +156,7 @@ public class Level5 implements Level{
 			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle, 390, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
-				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
@@ -170,7 +170,7 @@ public class Level5 implements Level{
 			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle, 390, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
-				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
@@ -184,7 +184,7 @@ public class Level5 implements Level{
 			circle.radius = 7;
 			circleWrapper = new CircleWrapper(circle, 390, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
-				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.target((float)(circleWrapper.getAngle() - Math.toRadians(360)))
 				.repeat(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);

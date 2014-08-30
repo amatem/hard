@@ -3,6 +3,7 @@ package net.ws3.hard.screens;
 import net.ws3.hard.HardGame;
 import net.ws3.hard.levels.Level1;
 import net.ws3.hard.levels.Level10;
+import net.ws3.hard.levels.Level11;
 import net.ws3.hard.levels.Level2;
 import net.ws3.hard.levels.Level3;
 import net.ws3.hard.levels.Level4;
@@ -140,7 +141,7 @@ public class LevelScreen implements Screen{
 					game.setScreen(new GameScreen(game, new Level10()));
 					break;
 				case 11:
-					game.setScreen(new GameScreen(game, new Level1()));
+					game.setScreen(new GameScreen(game, new Level11()));
 					break;
 				case 12:
 					game.setScreen(new GameScreen(game, new Level1()));
