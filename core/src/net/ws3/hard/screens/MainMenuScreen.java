@@ -23,6 +23,7 @@ public class MainMenuScreen implements Screen{
 	private Button playGame, leaderboard, store;
 	
 	public MainMenuScreen(HardGame gam){
+		//SAMET CUKUMU YESIN
 		this.game = gam;
 		stage = new Stage(new StretchViewport(800, 480));
 		skin = new Skin(Gdx.files.internal("uitest/uitest.json"), new TextureAtlas(Gdx.files.internal("uitest/uitest.atlas")));
