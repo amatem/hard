@@ -40,6 +40,7 @@ public class Assets {
 	}
 	
 	public static void dispose(){
+		endGameBlack.dispose();
 		gameTextures.dispose();
 	}
 }

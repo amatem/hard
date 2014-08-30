@@ -7,6 +7,7 @@ import net.ws3.hard.controller.HardController;
 import net.ws3.hard.model.CircleWrapper;
 import net.ws3.hard.model.HardModel;
 import net.ws3.hard.model.Level;
+import net.ws3.hard.model.UserData;
 import net.ws3.hard.view.HardRenderer;
 import aurelienribon.tweenengine.Tween;
 
@@ -34,7 +35,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 public class GameScreen implements Screen, InputProcessor{
 	private final HardGame game;
-	private Level level;
+	private final int levelid;
 	private HardModel model;
 	private HardRenderer renderer;
 	private HardController controller;
@@ -51,9 +52,9 @@ public class GameScreen implements Screen, InputProcessor{
 	private Button nextLevel;
 	private Button mainMenu;
 	
-	public GameScreen(HardGame gam, Level level){
+	public GameScreen(HardGame gam, Level level, int leveli){
 		this.game = gam;
-		this.level = level;
+		this.levelid = leveli;
 		Tween.registerAccessor(Circle.class, new BlueCircleAccessor());
 		Tween.registerAccessor(CircleWrapper.class, new CircleWrapperAccessor());
 		
@@ -103,6 +104,12 @@ public class GameScreen implements Screen, InputProcessor{
 		endGameTable.add(mainMenu).padRight(3);
 		
 		nextLevel = new Button(skin, "nextLevel");
+		nextLevel.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y){
+				game.openLevel(levelid + 1);
+			}
+		});
 		endGameTable.add(nextLevel);
 		
 		im = new InputMultiplexer();
@@ -128,6 +135,17 @@ public class GameScreen implements Screen, InputProcessor{
 			deathCount.setText("" + model.getDeathCount());
 		}	
 		else{
+			int highScore = UserData.getHighScore(levelid);
+			String highStr;
+			if(highScore == -1){
+				highStr = "NAN";
+			}
+			else
+				highStr = highScore + "";
+			UserData.saveHighscore(levelid, model.getDeathCount());
+			
+			endGameScore.setText("DEATHS: " + model.getDeathCount() + "\n\nBEST: " + highStr);
+			UserData.unlockNextLevel(levelid);
 			stage.addActor(endGameTable);
 		}
 		renderer.render();
@@ -147,6 +165,7 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void hide() {
+		dispose();
 	}
 
 	@Override
