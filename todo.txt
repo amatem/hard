@@ -7,3 +7,4 @@
 - admob eklenecek
 - kalan bolumler eklenecek (11 - 20)
 - splash screen eklenecek
+- dispose duzeltilecek

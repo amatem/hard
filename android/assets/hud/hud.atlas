@@ -1,27 +1,69 @@
 
 hud.png
-size: 195,81
+size: 1014,251
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 deathlabel
   rotate: false
-  xy: 2, 2
+  xy: 2, 28
   size: 61, 79
   split: 9, 9, 29, 19
   orig: 61, 79
   offset: 0, 0
   index: -1
+endgamebg
+  rotate: false
+  xy: 2, 109
+  size: 396, 142
+  orig: 396, 142
+  offset: 0, 0
+  index: -1
+mainmenubutton1
+  rotate: false
+  xy: 708, 121
+  size: 119, 130
+  orig: 119, 130
+  offset: 0, 0
+  index: -1
+mainmenubutton2
+  rotate: false
+  xy: 829, 121
+  size: 119, 130
+  orig: 119, 130
+  offset: 0, 0
+  index: -1
+nextlevelbutton1
+  rotate: false
+  xy: 400, 121
+  size: 152, 130
+  orig: 152, 130
+  offset: 0, 0
+  index: -1
+nextlevelbutton2
+  rotate: false
+  xy: 554, 121
+  size: 152, 130
+  orig: 152, 130
+  offset: 0, 0
+  index: -1
+score
+  rotate: false
+  xy: 400, 2
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
 sound-off
   rotate: false
-  xy: 65, 17
+  xy: 950, 187
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 sound-on
   rotate: false
-  xy: 131, 17
+  xy: 65, 43
   size: 64, 64
   orig: 64, 64
   offset: 0, 0

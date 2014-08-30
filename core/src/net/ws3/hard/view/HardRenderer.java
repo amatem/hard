@@ -70,6 +70,10 @@ public class HardRenderer {
 		
 		for(Circle circle : model.getYellowCircles())
 			batch.draw(Assets.yellowCircleTexture, circle.x - circle.radius, circle.y - circle.radius, circle.radius + circle.radius, circle.radius + circle.radius);
+		
+		if(model.isEndGame())
+			batch.draw(Assets.endGameBlack, 0, 0, 800, 480);
+		
 		batch.end();
 		
 		if(debug)

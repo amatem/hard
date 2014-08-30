@@ -19,18 +19,22 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad.TouchpadStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 public class GameScreen implements Screen, InputProcessor{
-	private HardGame game;
+	private final HardGame game;
+	private Level level;
 	private HardModel model;
 	private HardRenderer renderer;
 	private HardController controller;
@@ -42,9 +46,14 @@ public class GameScreen implements Screen, InputProcessor{
 	private Label deathCount;
 	private Button soundButton;
 	private Skin skin;
+	private Table endGameTable;
+	private Label endGameScore;
+	private Button nextLevel;
+	private Button mainMenu;
 	
-	public GameScreen(HardGame game, Level level){
-		this.game = game;
+	public GameScreen(HardGame gam, Level level){
+		this.game = gam;
+		this.level = level;
 		Tween.registerAccessor(Circle.class, new BlueCircleAccessor());
 		Tween.registerAccessor(CircleWrapper.class, new CircleWrapperAccessor());
 		
@@ -76,6 +85,26 @@ public class GameScreen implements Screen, InputProcessor{
 		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
 		stage.addActor(soundButton);
 		
+		endGameTable = new Table();
+		endGameTable.setBackground(skin.getDrawable("endgamebg"));
+		endGameTable.setBounds(400 - 198, 240 - 71, 396, 142);
+		
+		endGameScore = new Label("DEATHS: \n\nBEST: ", skin, "score");
+		endGameScore.setAlignment(Align.center);
+		endGameTable.add(endGameScore).width(117).height(117).padRight(3);
+		
+		mainMenu = new Button(skin, "mainMenu");
+		mainMenu.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y){
+				game.setScreen(new MainMenuScreen(game));
+			}
+		});
+		endGameTable.add(mainMenu).padRight(3);
+		
+		nextLevel = new Button(skin, "nextLevel");
+		endGameTable.add(nextLevel);
+		
 		im = new InputMultiplexer();
 		Array<InputProcessor> processors = new Array<InputProcessor>();
 		processors.add(this);
@@ -89,16 +118,18 @@ public class GameScreen implements Screen, InputProcessor{
 		Gdx.gl.glClearColor(0.1f, 0.1f, 0.1f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
-		controller.setTouchpadPercents(touchpad.getKnobPercentX(), touchpad.getKnobPercentY());
-		model.updateTweens(delta);
-		controller.update(delta);
-		model.collisionControl();
-		model.eatYellowFuckers();
-		model.savePosition();
-		deathCount.setText("" + model.getDeathCount());
-		
-		if(model.isEndGame())
-			game.setScreen(new LevelScreen(game));
+		if(!model.isEndGame()){
+			controller.setTouchpadPercents(touchpad.getKnobPercentX(), touchpad.getKnobPercentY());
+			model.updateTweens(delta);
+			controller.update(delta);
+			model.collisionControl();
+			model.eatYellowFuckers();
+			model.savePosition();
+			deathCount.setText("" + model.getDeathCount());
+		}	
+		else{
+			stage.addActor(endGameTable);
+		}
 		renderer.render();
 		stage.act(delta);
 		stage.draw();

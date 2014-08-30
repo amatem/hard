@@ -1,12 +1,18 @@
 {
-	com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: default.fnt } },
+	com.badlogic.gdx.graphics.g2d.BitmapFont: { 
+		default-font: { file: default.fnt },
+		default-font26: { file: default26.fnt } 
+	},
 	com.badlogic.gdx.graphics.Color: {
 		white: { a: 1, b: 1, g: 1, r: 1 },
 	},
 	com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
-		sound: { up: sound-on, checked: sound-off }
+		sound: { up: sound-on, checked: sound-off },
+		nextLevel: { up: nextlevelbutton1, down: nextlevelbutton2},
+		mainMenu: { up: mainmenubutton1, down: mainmenubutton2}
 	},
 	com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
-		deathCount: { background: deathlabel, font: default-font, fontColor: white }
+		deathCount: { background: deathlabel, font: default-font, fontColor: white },
+		score: { background: score, font: default-font26, fontColor: white }
 	}
 }
