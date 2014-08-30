@@ -60,7 +60,7 @@ public class Level12 implements Level{
 	@Override
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
-		float baseTime = 1f;
+		float baseTime = 5f;
 		float temp = 17.5f;
 		float r = 7;
 		
@@ -147,11 +147,180 @@ public class Level12 implements Level{
 			circle.radius = r;
 			blueCircles.add(circle);
 		}
+		
+		for (int i = 0; i < 3; i++)
+		{
+			circle = new Circle();
+			circle.x = 190 + 1.5f * r + 2.5f * r * i;
+			circle.y = 135 + 1.5f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		circle = new Circle();
+		circle.x = 190 + 1.5f * r;
+		circle.y = 135 + 4f * r;
+		circle.radius = r;
+		blueCircles.add(circle);
+		
+		for (int i = 0; i < 2; i++)
+		{
+			circle = new Circle();
+			circle.x = 330 + 1.5f * r + 2.5f * r * i;
+			circle.y = 345 - 1.5f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 7; i++)
+		{
+			circle = new Circle();
+			circle.x = 295 - 3.5f * r + 2.5f * r * i;
+			circle.y = 205 - 1.5f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 2; i++)
+		{
+			circle = new Circle();
+			circle.x = 295 + 1.5f * r + 2.5f * r * i;
+			circle.y = 205 - 4f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 17; i++)
+		{
+			circle = new Circle();
+			circle.x = 120 + 1.5f * r + 2.5f * r * i;
+			circle.y = 205 + r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 8; i++)
+		{
+			circle = new Circle();
+			circle.x = 120 + 1.5f * r + 2.5f * r * i;
+			circle.y = 205 + 3.5f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 3; i++)
+		{
+			circle = new Circle();
+			circle.x = 365 + 1.5f * r + 2.5f * r * i;
+			circle.y = 205 + 3.5f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 3; i++)
+		{
+			circle = new Circle();
+			circle.x = 365 + 1.5f * r + 2.5f * r * i;
+			circle.y = 240 + r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 7; i++)
+		{
+			circle = new Circle();
+			circle.x = 400 + 1.5f * r - 2.5f * r * i;
+			circle.y = 240 + 3.5f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 13; i++)
+		{
+			circle = new Circle();
+			circle.x = 400 + 1.5f * r - 2.5f * r * i;
+			circle.y = 275 + r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 6; i++)
+		{
+			circle = new Circle();
+			circle.x = 190 + 1.5f * r + 2.5f * r * i;
+			circle.y = 275 + 3.5f * r;
+			circle.radius = r;
+			blueCircles.add(circle);
+		}
+		
+		circle = new Circle();
+		circle.x = 400 + 1.5f * r;
+		circle.y = 275 + 3.5f * r;
+		circle.radius = r;
+		blueCircles.add(circle);
+		
+		for (int i = 0; i < 2; i++)
+		{
+			circle = new Circle();
+			circle.x = 575 - r - 2.5f * r * i;
+			circle.y = 135 - r;
+			circle.radius = r;
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+				.target(345 + r)
+				.repeatYoyo(-1, 0f)
+				.start(manager);
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 2; i++)
+		{
+			circle = new Circle();
+			circle.x = 470 - 3.5f * r - 2.5f * r * i;
+			circle.y = 345 + r;
+			circle.radius = r;
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+				.target(135 - r)
+				.repeatYoyo(-1, 0f)
+				.start(manager);
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 2; i++)
+		{
+			circle = new Circle();
+			circle.x = 330 + 1.5f * r + 2.5f * r * i;
+			circle.y = 135 - r;
+			circle.radius = r;
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+				.target(345 + r)
+				.repeatYoyo(-1, 0f)
+				.start(manager);
+			blueCircles.add(circle);
+		}
+		
+		for (int i = 0; i < 2; i++)
+		{
+			circle = new Circle();
+			circle.x = 225 + 1.5f * r + 2.5f * r * i;
+			circle.y = 345 + r;
+			circle.radius = r;
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+				.target(135 - r)
+				.repeatYoyo(-1, 0f)
+				.start(manager);
+			blueCircles.add(circle);
+		}
 	}
-
+	
 	@Override
 	public void setYellowCircles(Array<Circle> yellowCircles) {
-		// TODO Auto-generated method stub
+		Circle circle;
+		
+		circle = new Circle();
+		circle.x = 330 + 17.5f;
+		circle.y = 240;
+		circle.radius = 10;
+		yellowCircles.add(circle);
 		
 	}
 
