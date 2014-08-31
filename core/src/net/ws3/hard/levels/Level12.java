@@ -61,7 +61,6 @@ public class Level12 implements Level{
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		float baseTime = 5f;
-		float temp = 17.5f;
 		float r = 7;
 		
 		for (int i = 0; i < 34 ; i++)

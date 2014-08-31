@@ -15,8 +15,8 @@ public class Level1 implements Level{
 	
 	@Override
 	public void setStartPosition(Rectangle position) {
-		position.x = 75 + 35;
-		position.y = 115 + 125;
+		position.x = 110;
+		position.y = 235;
 		position.width = 25;
 		position.height = 25;
 	}

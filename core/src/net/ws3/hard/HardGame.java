@@ -4,6 +4,10 @@ import net.ws3.hard.levels.Level1;
 import net.ws3.hard.levels.Level10;
 import net.ws3.hard.levels.Level11;
 import net.ws3.hard.levels.Level12;
+import net.ws3.hard.levels.Level13;
+import net.ws3.hard.levels.Level14;
+import net.ws3.hard.levels.Level15;
+import net.ws3.hard.levels.Level16;
 import net.ws3.hard.levels.Level2;
 import net.ws3.hard.levels.Level3;
 import net.ws3.hard.levels.Level4;
@@ -67,16 +71,16 @@ public class HardGame extends Game {
 			setScreen(new GameScreen(this, new Level12(), level));
 			break;
 		case 13:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level13(), level));
 			break;
 		case 14:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level14(), level));
 			break;
 		case 15:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level15(), level));
 			break;
 		case 16:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level16(), level));
 			break;
 		case 17:
 			setScreen(new GameScreen(this, new Level1(), level));
