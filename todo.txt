@@ -3,6 +3,7 @@
 - muzikler ve vibrate eklenecek
 - death count eklenecek +
 - save eklenecek +
+- lock eklenecek
 - swarm eklenecek
 - admob eklenecek
 - kalan bolumler eklenecek (11 - 20)
