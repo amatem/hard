@@ -1,20 +1,9 @@
 package net.ws3.hard.screens;
 
 import net.ws3.hard.HardGame;
-import net.ws3.hard.levels.Level1;
-import net.ws3.hard.levels.Level10;
-import net.ws3.hard.levels.Level11;
-import net.ws3.hard.levels.Level12;
-import net.ws3.hard.levels.Level2;
-import net.ws3.hard.levels.Level3;
-import net.ws3.hard.levels.Level4;
-import net.ws3.hard.levels.Level5;
-import net.ws3.hard.levels.Level6;
-import net.ws3.hard.levels.Level7;
-import net.ws3.hard.levels.Level8;
-import net.ws3.hard.levels.Level9;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -25,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.TimeUtils;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 public class LevelScreen implements Screen{
@@ -33,8 +23,10 @@ public class LevelScreen implements Screen{
 	private Skin skin;
 	private Table table;
 	private TextButton textButton;
+	private long startTime;
 	
 	public LevelScreen(HardGame gam){
+		startTime = TimeUtils.nanoTime();
 		this.game = gam;
 		stage = new Stage(new StretchViewport(800, 480));
 		skin = new Skin(Gdx.files.internal("uitest/uitest.json"), new TextureAtlas(Gdx.files.internal("uitest/uitest.atlas")));
@@ -63,6 +55,9 @@ public class LevelScreen implements Screen{
 		
 		stage.act(delta);
 		stage.draw();
+		
+		if(TimeUtils.nanoTime() - startTime > 5000000L && Gdx.input.isKeyJustPressed(Keys.BACK))
+			game.setScreen(new MainMenuScreen(game));
 	}
 
 	@Override

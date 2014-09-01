@@ -1,5 +1,6 @@
 package net.ws3.hard.screens;
 
+import net.ws3.hard.Assets;
 import net.ws3.hard.BlueCircleAccessor;
 import net.ws3.hard.CircleWrapperAccessor;
 import net.ws3.hard.HardGame;
@@ -20,9 +21,12 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -46,23 +50,38 @@ public class GameScreen implements Screen, InputProcessor{
 	private TouchpadStyle touchpadStyle;
 	private Label deathCount;
 	private Button soundButton;
-	private Skin skin;
+	private Skin hudSkin;
 	private Table endGameTable;
 	private Label endGameScore;
 	private Button nextLevel;
 	private Button mainMenu;
+	private Image highScoreSplash;
+	private boolean isHighScoreFaded;
 	
 	public GameScreen(HardGame gam, Level level, int leveli){
 		this.game = gam;
 		this.levelid = leveli;
 		Tween.registerAccessor(Circle.class, new BlueCircleAccessor());
 		Tween.registerAccessor(CircleWrapper.class, new CircleWrapperAccessor());
+		isHighScoreFaded = true;
 		
 		model = new HardModel();
 		model.loadLevel(level);
 		
 		renderer = new HardRenderer(model, false);
 		controller = new HardController(model);
+		
+		highScoreSplash = new Image(Assets.highScoreSplash);
+		highScoreSplash.setCenterPosition(400, 240);
+		highScoreSplash.getColor().a = 0f;
+		highScoreSplash.addAction(Actions.sequence(Actions.fadeIn(1f), Actions.delay(1f), Actions.fadeOut(1f), new Action(){
+			@Override
+			public boolean act(float delta){
+				UserData.unlockNextLevel(levelid);
+				stage.addActor(endGameTable);
+				return true;
+			}
+		}));
 		
 		touchpadSkin = new Skin();
 		touchpadSkin.add("touchBackground", new Texture(Gdx.files.internal("touchBackground.png")));
@@ -75,26 +94,26 @@ public class GameScreen implements Screen, InputProcessor{
 		stage = new Stage(new StretchViewport(800, 480));
 		stage.addActor(touchpad);
 		
-		skin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
+		hudSkin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
 		
-		deathCount = new Label("" + model.getDeathCount(), skin, "deathCount");
+		deathCount = new Label("" + UserData.getLifes(), hudSkin, "deathCount");
 		deathCount.setAlignment(Align.center);
 		deathCount.setBounds(0, 401, 61, 79);
 		stage.addActor(deathCount);
 		
-		soundButton = new Button(skin, "sound");
+		soundButton = new Button(hudSkin, "sound");
 		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
 		stage.addActor(soundButton);
 		
 		endGameTable = new Table();
-		endGameTable.setBackground(skin.getDrawable("endgamebg"));
+		endGameTable.setBackground(hudSkin.getDrawable("endgamebg"));
 		endGameTable.setBounds(400 - 198, 240 - 71, 396, 142);
 		
-		endGameScore = new Label("DEATHS: \n\nBEST: ", skin, "score");
+		endGameScore = new Label("DEATHS: \n\nBEST: ", hudSkin, "score");
 		endGameScore.setAlignment(Align.center);
 		endGameTable.add(endGameScore).width(117).height(117).padRight(3);
 		
-		mainMenu = new Button(skin, "mainMenu");
+		mainMenu = new Button(hudSkin, "mainMenu");
 		mainMenu.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
@@ -103,7 +122,7 @@ public class GameScreen implements Screen, InputProcessor{
 		});
 		endGameTable.add(mainMenu).padRight(3);
 		
-		nextLevel = new Button(skin, "nextLevel");
+		nextLevel = new Button(hudSkin, "nextLevel");
 		nextLevel.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
@@ -117,7 +136,7 @@ public class GameScreen implements Screen, InputProcessor{
 		processors.add(this);
 		processors.add(stage);
 		im.setProcessors(processors);
-		
+
 		Gdx.input.setInputProcessor(im);
 	}
 	
@@ -129,24 +148,34 @@ public class GameScreen implements Screen, InputProcessor{
 			controller.setTouchpadPercents(touchpad.getKnobPercentX(), touchpad.getKnobPercentY());
 			model.updateTweens(delta);
 			controller.update(delta);
-			model.collisionControl();
+			if(model.collisionControl()){
+				UserData.death();
+				deathCount.setText("" + UserData.getLifes());
+				model.respawn();
+				controller.updateTouch();
+			}
 			model.eatYellowFuckers();
 			model.savePosition();
-			deathCount.setText("" + model.getDeathCount());
 		}	
 		else{
 			int highScore = UserData.getHighScore(levelid);
 			String highStr;
 			if(highScore == -1){
-				highStr = "NAN";
+				highStr = "NaN";
 			}
 			else
 				highStr = highScore + "";
 			UserData.saveHighscore(levelid, model.getDeathCount());
-			
 			endGameScore.setText("DEATHS: " + model.getDeathCount() + "\n\nBEST: " + highStr);
-			UserData.unlockNextLevel(levelid);
-			stage.addActor(endGameTable);
+			
+			if(highScore == -1 || highScore > model.getDeathCount()){
+				stage.addActor(highScoreSplash);
+				isHighScoreFaded = false;
+			}
+			else if(isHighScoreFaded){
+				UserData.unlockNextLevel(levelid);
+				stage.addActor(endGameTable);
+			}
 		}
 		renderer.render();
 		stage.act(delta);
@@ -184,7 +213,7 @@ public class GameScreen implements Screen, InputProcessor{
 	public void dispose() {
 		renderer.dispose();
 		stage.dispose();
-		skin.dispose();
+		hudSkin.dispose();
 		touchpadSkin.dispose();
 	}
 
@@ -198,6 +227,8 @@ public class GameScreen implements Screen, InputProcessor{
 			controller.upPressed();
 		if(keycode == Keys.S)
 			controller.downPressed();
+		if(keycode == Keys.BACK)
+			game.setScreen(new LevelScreen(game));
 		return true;
 	}
 
@@ -222,16 +253,22 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+		/*controller.setTouchDown(screenX, 480 - screenY);
+		System.out.println("TOUCHDOWN = screenX: " + screenX + " - screenY: " + screenY);*/
 		return false;
 	}
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		/*controller.setTouchUp();
+		System.out.println("TOUCHUP = screenX: " + screenX + " - screenY: " + screenY);*/
 		return false;
 	}
 
 	@Override
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
+		/*controller.setTouchDragged(screenX, 480 - screenY);
+		System.out.println("TOUCHDRAGGED = screenX: " + screenX + " - screenY: " + screenY);*/
 		return false;
 	}
 
