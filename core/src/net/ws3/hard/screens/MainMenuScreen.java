@@ -2,7 +2,6 @@ package net.ws3.hard.screens;
 
 import net.ws3.hard.HardGame;
 
-import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -15,7 +14,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.swarmconnect.Swarm;
 
 public class MainMenuScreen implements Screen{
 	private final HardGame game;
@@ -45,13 +43,6 @@ public class MainMenuScreen implements Screen{
 		table.add(playGame).padRight(10);
 		
 		leaderboard = new Button(skin, "leaderboard");
-		leaderboard.addListener(new ClickListener(){
-			@Override
-			public void clicked(InputEvent event, float x, float y){
-				if(Gdx.app.getType() == ApplicationType.Android)
-					Swarm.showLeaderboards();
-			}
-		});
 		table.add(leaderboard).padRight(10);
 		
 		store = new Button(skin, "store");

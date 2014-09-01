@@ -11,7 +11,6 @@ import net.ws3.hard.model.UserData;
 import net.ws3.hard.view.HardRenderer;
 import aurelienribon.tweenengine.Tween;
 
-import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
@@ -33,7 +32,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.swarmconnect.SwarmLeaderboard;
 
 public class GameScreen implements Screen, InputProcessor{
 	private final HardGame game;
@@ -137,13 +135,16 @@ public class GameScreen implements Screen, InputProcessor{
 			deathCount.setText("" + model.getDeathCount());
 		}	
 		else{
-			UserData.saveHighscore(levelid, model.getDeathCount());
 			int highScore = UserData.getHighScore(levelid);
+			String highStr;
+			if(highScore == -1){
+				highStr = "NAN";
+			}
+			else
+				highStr = highScore + "";
+			UserData.saveHighscore(levelid, model.getDeathCount());
 			
-			if(levelid == 1 && Gdx.app.getType() == ApplicationType.Android)
-				SwarmLeaderboard.submitScore(17625, highScore);
-			
-			endGameScore.setText("DEATHS: " + model.getDeathCount() + "\n\nBEST: " + highScore);
+			endGameScore.setText("DEATHS: " + model.getDeathCount() + "\n\nBEST: " + highStr);
 			UserData.unlockNextLevel(levelid);
 			stage.addActor(endGameTable);
 		}

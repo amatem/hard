@@ -1,11 +1,10 @@
 package net.ws3.hard.android;
 
-import net.ws3.hard.HardGame;
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.swarmconnect.Swarm;
+import net.ws3.hard.HardGame;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
@@ -17,18 +16,5 @@ public class AndroidLauncher extends AndroidApplication {
 		config.useCompass = false;
 		
 		initialize(new HardGame(), config);
-		Swarm.setActive(this);
-	}
-	
-	public void onResume() {
-	    super.onResume();
-	    Swarm.setActive(this);
-	    
-	    Swarm.init(this, 12965, "4549d82b924d92f9be97f5a7e4171f81");
-	}
-
-	public void onPause() {
-	    super.onPause();
-	    Swarm.setInactive(this);
 	}
 }
