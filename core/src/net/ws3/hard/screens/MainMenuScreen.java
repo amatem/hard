@@ -3,6 +3,7 @@ package net.ws3.hard.screens;
 import net.ws3.hard.HardGame;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.TimeUtils;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 public class MainMenuScreen implements Screen{
@@ -21,8 +23,10 @@ public class MainMenuScreen implements Screen{
 	private Skin skin;
 	private Table table;
 	private Button playGame, leaderboard, store;
+	private long startTime;
 	
 	public MainMenuScreen(HardGame gam){
+		startTime = TimeUtils.nanoTime();
 		this.game = gam;
 		stage = new Stage(new StretchViewport(800, 480));
 		skin = new Skin(Gdx.files.internal("uitest/uitest.json"), new TextureAtlas(Gdx.files.internal("uitest/uitest.atlas")));
@@ -60,6 +64,9 @@ public class MainMenuScreen implements Screen{
 		
 		stage.act(delta);
 		stage.draw();
+		
+		if(TimeUtils.nanoTime() - startTime > 5000000L && Gdx.input.isKeyPressed(Keys.BACK))
+			Gdx.app.exit();
 	}
 
 	@Override

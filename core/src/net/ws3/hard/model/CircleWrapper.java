@@ -19,6 +19,8 @@ public class CircleWrapper {
 		
 		if(circle.y < y)
 			angle = Math.toRadians(360) - angle;
+		
+		System.out.println("cx: " + circle.x + " - cy: " + circle.y + " - angle: " + angle + " - x : " + x + " - y:" + y + " - X:" + (1 - (X * X) / (r * r + r * r)));
 	}
 	
 	public Circle getCircle(){

@@ -16,9 +16,15 @@ public class HardController {
 	private HardModel model;
 	private static Map<Keys, Boolean> keys;
 	private float touchpadX, touchpadY;
+	private boolean isTouched;
+	private int touchX, touchY;
+	private int draggedX, draggedY;
+	private float touchPlayerX, touchPlayerY;
 	
 	public HardController(HardModel model){
 		this.model = model;
+		
+		isTouched = false;
 		
 		touchpadX = 0f;
 		touchpadY = 0f;
@@ -63,6 +69,30 @@ public class HardController {
 		keys.put(Keys.DOWN, false);
 	}
 	
+	public void setTouchDown(int x, int y){
+		isTouched = true;
+		touchX = x;
+		touchY = y;
+		Rectangle player = model.getPlayer();
+		touchPlayerX = player.x;
+		touchPlayerY = player.y;
+	}
+	
+	public void setTouchDragged(int x, int y){
+		draggedX = x;
+		draggedY = y;
+	}
+	
+	public void setTouchUp(){
+		isTouched = false;
+	}
+	
+	public void updateTouch(){
+		if(isTouched){
+			setTouchDown(draggedX, draggedY);
+		}
+	}
+	
 	private void processInput(float delta, Vector2 v){
 		if(keys.get(Keys.LEFT))
 			v.x -= 200 * delta;
@@ -76,8 +106,15 @@ public class HardController {
 		if(keys.get(Keys.DOWN))
 			v.y -= 200 * delta;
 		
-		v.x += touchpadX * 240 * delta;
-		v.y += touchpadY * 240 * delta;
+		if(isTouched){
+			Rectangle player = model.getPlayer();
+			v.x = touchPlayerX + draggedX - touchX - player.x;
+			v.y = touchPlayerY + draggedY - touchY - player.y;
+		}
+		else{
+			v.x += touchpadX * 240 * delta;
+			v.y += touchpadY * 240 * delta;
+		}
 	}
 	
 	public void update(float delta){

@@ -1,11 +1,11 @@
-- geri ve menu tusu etkilesimi eklenecek
-- oyun sonu eklenecek +
 - muzikler ve vibrate eklenecek
-- death count eklenecek +
-- save eklenecek +
 - lock eklenecek
-- swarm eklenecek
+- swarm store eklenecek
 - admob eklenecek
-- kalan bolumler eklenecek (11 - 20)
+- kalan bolumler eklenecek (20 - 30)
+- performance duzeltilecek
+- android kontrol denenecek
 - splash screen eklenecek
-- dispose duzeltilecek +
+- can azaliyor, caniniz kalmadi ekrani eklenecek
+- bilgi ekranlari eklenecek
+- new highscore ekrani eklenecek

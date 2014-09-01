@@ -17,6 +17,7 @@ public class Assets {
 	public static TextureRegion blueCircleTexture;
 	public static TextureRegion yellowCircleTexture;
 	public static Texture endGameBlack;
+	public static Texture highScoreSplash;
 	
 	public static TiledDrawable mapWrapperTiled;
 	public static TiledDrawable mapTileTiled;
@@ -25,6 +26,7 @@ public class Assets {
 	public static void loadAssets(){
 		gameTextures = new TextureAtlas(Gdx.files.internal("gameTextures.atlas"));
 		endGameBlack = new Texture(Gdx.files.internal("endgameblack.png"));
+		highScoreSplash = new Texture(Gdx.files.internal("highscore.png"));
 		
 		bgTexture = gameTextures.findRegion("bg");
 		mapTileTexture = gameTextures.findRegion("mapTile");

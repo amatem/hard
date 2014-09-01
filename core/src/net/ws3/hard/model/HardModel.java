@@ -117,10 +117,11 @@ public class HardModel {
 		return isOutOfMapp(x, y) || isOutOfMapp(x + width, y) || isOutOfMapp(x, y + height) || isOutOfMapp(x + width, y + height);
 	}
 	
-	public void collisionControl(){
+	public boolean collisionControl(){
 		for(Circle circle: blueCircles)
 			if(Intersector.overlaps(circle, player))
-				respawn();
+				return true;
+		return false;
 	}
 	
 	public void eatYellowFuckers(){
