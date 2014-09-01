@@ -9,8 +9,21 @@ import net.ws3.hard.levels.Level14;
 import net.ws3.hard.levels.Level15;
 import net.ws3.hard.levels.Level16;
 import net.ws3.hard.levels.Level17;
+import net.ws3.hard.levels.Level18;
+import net.ws3.hard.levels.Level19;
 import net.ws3.hard.levels.Level2;
+import net.ws3.hard.levels.Level20;
+import net.ws3.hard.levels.Level21;
+import net.ws3.hard.levels.Level22;
+import net.ws3.hard.levels.Level23;
+import net.ws3.hard.levels.Level24;
+import net.ws3.hard.levels.Level25;
+import net.ws3.hard.levels.Level26;
+import net.ws3.hard.levels.Level27;
+import net.ws3.hard.levels.Level28;
+import net.ws3.hard.levels.Level29;
 import net.ws3.hard.levels.Level3;
+import net.ws3.hard.levels.Level30;
 import net.ws3.hard.levels.Level4;
 import net.ws3.hard.levels.Level5;
 import net.ws3.hard.levels.Level6;
@@ -87,43 +100,43 @@ public class HardGame extends Game {
 			setScreen(new GameScreen(this, new Level17(), level));
 			break;
 		case 18:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level18(), level));
 			break;
 		case 19:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level19(), level));
 			break;
 		case 20:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level20(), level));
 			break;
 		case 21:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level21(), level));
 			break;
 		case 22:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level22(), level));
 			break;
 		case 23:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level23(), level));
 			break;
 		case 24:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level24(), level));
 			break;
 		case 25:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level25(), level));
 			break;
 		case 26:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level26(), level));
 			break;
 		case 27:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level27(), level));
 			break;
 		case 28:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level28(), level));
 			break;
 		case 29:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level29(), level));
 			break;
 		case 30:
-			setScreen(new GameScreen(this, new Level1(), level));
+			setScreen(new GameScreen(this, new Level30(), level));
 			break;
 		default:
 			setScreen(new MainMenuScreen(this));
