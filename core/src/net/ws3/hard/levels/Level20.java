@@ -189,7 +189,51 @@ public class Level20 implements Level{
 
 	@Override
 	public void setYellowCircles(Array<Circle> yellowCircles) {
-		// TODO Auto-generated method stub
+		Circle circle;
+		float r = 7;
+		float temp = 17.5f;
+		
+		circle = new Circle();
+		circle.x = 680 + temp;
+		circle.y = 380 - temp;
+		circle.radius = r;
+		yellowCircles.add(circle);
+		
+		circle = new Circle();
+		circle.x = 680 - temp;
+		circle.y = 240 + temp;
+		circle.radius = r;
+		yellowCircles.add(circle);
+		
+		circle = new Circle();
+		circle.x = 540 + temp;
+		circle.y = 240 - temp;
+		circle.radius = r;
+		yellowCircles.add(circle);
+		
+		circle = new Circle();
+		circle.x = 540 + temp;
+		circle.y = 310 + temp;
+		circle.radius = r;
+		yellowCircles.add(circle);
+		
+		circle = new Circle();
+		circle.x = 330 + temp;
+		circle.y = 240 - temp;
+		circle.radius = r;
+		yellowCircles.add(circle);
+		
+		circle = new Circle();
+		circle.x = 330 + temp;
+		circle.y = 310 + temp;
+		circle.radius = r;
+		yellowCircles.add(circle);
+		
+		circle = new Circle();
+		circle.x = 470 - temp;
+		circle.y = 240 + temp;
+		circle.radius = r;
+		yellowCircles.add(circle);
 		
 	}
 

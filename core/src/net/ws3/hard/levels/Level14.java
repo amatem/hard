@@ -63,7 +63,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 225 + temp;
-			circle.y = 170 + temp + i * (2 * r + temp / 3);
+			circle.y = 170 + temp + i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -77,7 +77,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 225 + temp;
-			circle.y = 170 + temp - i * (2 * r + temp / 3);
+			circle.y = 170 + temp - i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -90,7 +90,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 225 + temp - i * (2 * r + temp / 3);
+			circle.x = 225 + temp - i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
@@ -104,7 +104,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 225 + temp + i * (2 * r + temp / 3);
+			circle.x = 225 + temp + i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
@@ -119,7 +119,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 365 + temp;
-			circle.y = 170 + temp + i * (2 * r + temp / 3);
+			circle.y = 170 + temp + i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -133,7 +133,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 365 + temp;
-			circle.y = 170 + temp - i * (2 * r + temp / 3);
+			circle.y = 170 + temp - i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -146,7 +146,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 365 + temp - i * (2 * r + temp / 3);
+			circle.x = 365 + temp - i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
@@ -160,7 +160,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 365 + temp + i * (2 * r + temp / 3);
+			circle.x = 365 + temp + i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
@@ -175,7 +175,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 505 + temp;
-			circle.y = 170 + temp + i * (2 * r + temp / 3);
+			circle.y = 170 + temp + i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -189,7 +189,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 505 + temp;
-			circle.y = 170 + temp - i * (2 * r + temp / 3);
+			circle.y = 170 + temp - i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -202,7 +202,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 505 + temp - i * (2 * r + temp / 3);
+			circle.x = 505 + temp - i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
@@ -216,7 +216,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 505 + temp + i * (2 * r + temp / 3);
+			circle.x = 505 + temp + i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
@@ -231,7 +231,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 645 + temp;
-			circle.y = 170 + temp + i * (2 * r + temp / 3);
+			circle.y = 170 + temp + i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -245,7 +245,7 @@ public class Level14 implements Level{
 		{
 			circle = new Circle();
 			circle.x = 645 + temp;
-			circle.y = 170 + temp - i * (2 * r + temp / 3);
+			circle.y = 170 + temp - i * (2 * r + 5.8f);
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
@@ -258,7 +258,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 645 + temp - i * (2 * r + temp / 3);
+			circle.x = 645 + temp - i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
@@ -272,7 +272,7 @@ public class Level14 implements Level{
 		for (int i = 1 ; i <= 2 ; i++ )
 		{
 			circle = new Circle();
-			circle.x = 645 + temp + i * (2 * r + temp / 3);
+			circle.x = 645 + temp + i * (2 * r + 5.8f);
 			circle.y = 170 + temp;
 			circle.radius = r;
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
