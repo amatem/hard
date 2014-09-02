@@ -1,11 +1,13 @@
 package net.ws3.hard.levels;
 
+import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 
+import net.ws3.hard.BlueCircleAccessor;
 import net.ws3.hard.model.HardModel.MapState;
 import net.ws3.hard.model.HardModel;
 import net.ws3.hard.model.Level;
@@ -183,7 +185,56 @@ public class Level20 implements Level{
 
 	@Override
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
-		// TODO Auto-generated method stub
+		Circle circle;
+		float baseTime = 1f;
+		float temp = 17.5f;
+		float baseTime2 = 2f;
+		
+		for (int i = 0; i < 2 ; i++)
+		{
+			for (int j = 0 ; j < 2 ; j++)
+			{
+				circle = new Circle();
+				circle.x = 400 - temp + 210 * i;
+				circle.y = 170 + temp + 105 * j;
+				circle.radius = 7;
+				Tween.to(circle, BlueCircleAccessor.X, baseTime)
+					.target(505 - temp + 210 * i)
+					.repeatYoyo(-1, 0f)
+					.start(manager);
+				blueCircles.add(circle);
+			}
+		}
+		
+		for (int i = 0; i < 2 ; i++)
+		{
+			for (int j = 0 ; j < 2 ; j++)
+			{
+				circle = new Circle();
+				circle.x = 295 - temp + 210 * i;
+				circle.y = 240 + temp + 105 * j;
+				circle.radius = 7;
+				Tween.to(circle, BlueCircleAccessor.X, baseTime)
+					.target(400 - temp + 210 * i)
+					.repeatYoyo(-1, 0f)
+					.start(manager);
+				blueCircles.add(circle);
+			}
+		}
+		
+		for (int i = 0 ; i < 5 ; i++)
+		{
+			circle = new Circle();
+			circle.x = 680 + temp - 105 * i;
+			circle.y = 170 + temp;
+			circle.radius = 7;
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
+				.target(380 - temp)
+				.repeatYoyo(-1, 0f)
+				.start(manager);
+			blueCircles.add(circle);
+		}
+
 		
 	}
 
