@@ -10,20 +10,22 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
-public class MainMenuScreen implements Screen{
+public class IntroScreen implements Screen{
 	private final HardGame game;
 	private Stage stage;
 	private Skin skin;
-	private Table table;
-	private Button playGame, leaderboard, store;
+	private Image bg;
+	private Button button;
+	private final int levelid;
 	
-	public MainMenuScreen(HardGame gam){
+	public IntroScreen(HardGame gam, int leveli){
+		this.levelid = leveli;
 		this.game = gam;
 	}
 
@@ -34,9 +36,9 @@ public class MainMenuScreen implements Screen{
 		
 		stage.act(delta);
 		stage.draw();
-
+		
 		if(Gdx.input.isKeyPressed(Keys.BACK))
-			Gdx.app.exit();
+			game.setScreen(new LevelScreen(game));
 	}
 
 	@Override
@@ -46,44 +48,27 @@ public class MainMenuScreen implements Screen{
 
 	@Override
 	public void show() {
+		skin = new Skin(new TextureAtlas(Gdx.files.internal("intro/intro.atlas")));
+		
+		ButtonStyle buttonStyle = new ButtonStyle();
+		buttonStyle.down = skin.getDrawable("introplay2");
+		buttonStyle.up = skin.getDrawable("introplay1");
+		button = new Button(buttonStyle);
+		button.setPosition(580, 50);
+		button.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y){
+				game.openLevel(levelid);
+			}
+		});
+		
+		bg = new Image(skin.getRegion("intromenu"));
+		
 		stage = new Stage(new StretchViewport(800, 480));
-		skin = new Skin(Gdx.files.internal("uitest/uitest.json"), new TextureAtlas(Gdx.files.internal("uitest/uitest.atlas")));
 		
-		table = new Table();
-		table.setFillParent(true);
+		stage.addActor(bg);
+		stage.addActor(button);
 		
-		playGame = new Button(skin, "play");
-		
-		playGame.addListener(new ClickListener(){
-			@Override
-			public void clicked(InputEvent event, float x, float y){
-				//game.setScreen(new GameScreen(game, new Level9()));
-				game.setScreen(new LevelScreen(game));
-			}
-		});
-		
-		table.add(playGame).padRight(10);
-		
-		leaderboard = new Button(skin, "leaderboard");
-		leaderboard.addListener(new ClickListener(){
-			@Override
-			public void clicked(InputEvent event, float x, float y){
-				game.getSwarm().showLeaderboards();
-			}
-		});
-		table.add(leaderboard).padRight(10);
-		
-		store = new Button(skin, "store");
-		store.addListener(new ClickListener(){
-			@Override
-			public void clicked(InputEvent event, float x, float y){
-				game.getSwarm().showStore();
-			}
-		});
-		table.add(store);
-		
-		stage.addActor(new Image(skin, "mainmenubg"));
-		stage.addActor(table);
 		Gdx.input.setInputProcessor(stage);
 	}
 
@@ -106,8 +91,8 @@ public class MainMenuScreen implements Screen{
 
 	@Override
 	public void dispose() {
-		stage.dispose();
 		skin.dispose();
+		stage.dispose();
 	}
 
 }

@@ -11,6 +11,6 @@ public class DesktopLauncher {
 		      config.title = "Hard Fucker";
 		      config.width = 800;
 		      config.height = 480;
-		      new LwjglApplication(new HardGame(), config);
+		      new LwjglApplication(new HardGame(new SwarmDesktop()), config);
 		   }
 }

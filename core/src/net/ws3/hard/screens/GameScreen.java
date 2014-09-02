@@ -40,6 +40,7 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 public class GameScreen implements Screen, InputProcessor{
 	private final HardGame game;
 	private final int levelid;
+	private Level level;
 	private HardModel model;
 	private HardRenderer renderer;
 	private HardController controller;
@@ -61,8 +62,62 @@ public class GameScreen implements Screen, InputProcessor{
 	public GameScreen(HardGame gam, Level level, int leveli){
 		this.game = gam;
 		this.levelid = leveli;
+		this.level = level;
 		Tween.registerAccessor(Circle.class, new BlueCircleAccessor());
 		Tween.registerAccessor(CircleWrapper.class, new CircleWrapperAccessor());
+	}
+	
+	public void render(float delta){
+		Gdx.gl.glClearColor(0.1f, 0.1f, 0.1f, 1);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		
+		if(!model.isEndGame()){
+			controller.setTouchpadPercents(touchpad.getKnobPercentX(), touchpad.getKnobPercentY());
+			model.updateTweens(delta);
+			controller.update(delta);
+			if(model.collisionControl()){
+				UserData.death();
+				deathCount.setText("" + UserData.getLifes());
+				model.respawn();
+				controller.updateTouch();
+			}
+			model.eatYellowFuckers();
+			model.savePosition();
+		}	
+		else{
+			int highScore = UserData.getHighScore(levelid);
+			String highStr;
+			if(highScore == -1){
+				highStr = "NaN";
+			}
+			else
+				highStr = highScore + "";
+			UserData.saveHighscore(levelid, model.getDeathCount());
+			endGameScore.setText("DEATHS: " + model.getDeathCount() + "\n\nBEST: " + highStr);
+			
+			if(highScore == -1 || highScore > model.getDeathCount()){
+				stage.addActor(highScoreSplash);
+				isHighScoreFaded = false;
+			}
+			else if(isHighScoreFaded){
+				UserData.unlockNextLevel(levelid);
+				stage.addActor(endGameTable);
+			}
+		}
+		renderer.render();
+		stage.act(delta);
+		stage.draw();
+		
+		if(Gdx.input.isKeyPressed(Keys.BACK))
+			game.setScreen(new LevelScreen(game));
+	}
+	
+	public void resize(int width, int height){
+		stage.getViewport().update(width, height, true);
+	}
+
+	@Override
+	public void show() {
 		isHighScoreFaded = true;
 		
 		model = new HardModel();
@@ -139,58 +194,6 @@ public class GameScreen implements Screen, InputProcessor{
 
 		Gdx.input.setInputProcessor(im);
 	}
-	
-	public void render(float delta){
-		Gdx.gl.glClearColor(0.1f, 0.1f, 0.1f, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		
-		if(!model.isEndGame()){
-			controller.setTouchpadPercents(touchpad.getKnobPercentX(), touchpad.getKnobPercentY());
-			model.updateTweens(delta);
-			controller.update(delta);
-			if(model.collisionControl()){
-				UserData.death();
-				deathCount.setText("" + UserData.getLifes());
-				model.respawn();
-				controller.updateTouch();
-			}
-			model.eatYellowFuckers();
-			model.savePosition();
-		}	
-		else{
-			int highScore = UserData.getHighScore(levelid);
-			String highStr;
-			if(highScore == -1){
-				highStr = "NaN";
-			}
-			else
-				highStr = highScore + "";
-			UserData.saveHighscore(levelid, model.getDeathCount());
-			endGameScore.setText("DEATHS: " + model.getDeathCount() + "\n\nBEST: " + highStr);
-			
-			if(highScore == -1 || highScore > model.getDeathCount()){
-				stage.addActor(highScoreSplash);
-				isHighScoreFaded = false;
-			}
-			else if(isHighScoreFaded){
-				UserData.unlockNextLevel(levelid);
-				stage.addActor(endGameTable);
-			}
-		}
-		renderer.render();
-		stage.act(delta);
-		stage.draw();
-	}
-	
-	public void resize(int width, int height){
-		stage.getViewport().update(width, height, true);
-	}
-
-	@Override
-	public void show() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void hide() {
@@ -227,8 +230,8 @@ public class GameScreen implements Screen, InputProcessor{
 			controller.upPressed();
 		if(keycode == Keys.S)
 			controller.downPressed();
-		if(keycode == Keys.BACK)
-			game.setScreen(new LevelScreen(game));
+		/*if(keycode == Keys.BACK)
+			game.setScreen(new LevelScreen(game));*/
 		return true;
 	}
 

@@ -1,11 +1,8 @@
 - muzikler ve vibrate eklenecek
-- lock eklenecek
-- swarm store eklenecek
 - admob eklenecek
-- kalan bolumler eklenecek (20 - 30)
+- kalan bolumler eklenecek (30)
 - performance duzeltilecek
 - android kontrol denenecek
 - splash screen eklenecek
-- can azaliyor, caniniz kalmadi ekrani eklenecek
+- caniniz kalmadi ekrani eklenecek
 - bilgi ekranlari eklenecek
-- new highscore ekrani eklenecek

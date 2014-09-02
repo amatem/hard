@@ -9,6 +9,7 @@ public class UserData {
 	private static int[] bestScores = new int[31];
 	private static boolean[] lockStatus = new boolean[31];
 	private static int lifes;
+	private static boolean firstTime;
 	private static Preferences prefs = Gdx.app.getPreferences("LevelStatus");;
 	
 	public static void loadUserData(){
@@ -21,13 +22,15 @@ public class UserData {
 				prefs.putInteger(i + "i", -1);
 				prefs.putBoolean(i + "b", true);
 			}
-			prefs.putBoolean("1", false);
+			prefs.putBoolean("1b", false);
 			lockStatus[1] = false;
 			prefs.putInteger("lifes", 500);
 			prefs.putInteger("lastlifeupdate", Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
 			lifes = 1000;
+			firstTime = true;
 		}
 		else{
+			firstTime = false;
 			for(int i = 1; i <= 30; i++){
 				bestScores[i] = prefs.getInteger(i + "i", -1);
 				lockStatus[i] = prefs.getBoolean(i + "b", false);
@@ -41,9 +44,28 @@ public class UserData {
 		}
 	}
 	
+	public static boolean isFirstTime(){
+		if(firstTime){
+			firstTime = false;
+			return true;
+		}
+		return false;
+	}
+	
+	public static boolean isLevelLocked(int level){
+		if(level > 30 || level < 0){
+			System.out.println("BUG VAR YARRAK KAFASI levellerde: " + level);
+			return false;
+		}
+		System.out.println("LEVEL: " + level + " - lockStatus: " + lockStatus[level]);
+		return lockStatus[level];
+	}
+	
 	public static void unlockNextLevel(int level){
-		if(level < 30)
+		if(level < 30){
 			prefs.putBoolean((level + 1) + "b", false);
+			lockStatus[level + 1] = false;
+		}
 	}
 	
 	public static int getHighScore(int level){
