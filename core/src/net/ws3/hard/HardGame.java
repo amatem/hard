@@ -38,6 +38,16 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 
 public class HardGame extends Game {
+	private MySwarm swarm; 
+	
+	public HardGame(MySwarm swarm){
+		super();
+		this.swarm = swarm;
+	}
+	
+	public MySwarm getSwarm(){
+		return swarm;
+	}
 	
 	@Override
 	public void create() {

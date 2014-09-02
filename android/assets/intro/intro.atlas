@@ -1,0 +1,27 @@
+
+intro.png
+size: 899,482
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+intromenu
+  rotate: false
+  xy: 2, 2
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
+introplay1
+  rotate: false
+  xy: 804, 379
+  size: 95, 103
+  orig: 95, 103
+  offset: 0, 0
+  index: -1
+introplay2
+  rotate: false
+  xy: 804, 274
+  size: 95, 103
+  orig: 95, 103
+  offset: 0, 0
+  index: -1
