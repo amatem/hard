@@ -16,7 +16,7 @@ public class Level29 implements Level{
 
 	@Override
 	public void setStartPosition(Rectangle position) {
-		position.x = 85;
+		position.x = 715;
 		position.y = 380;
 		position.width = 25;
 		position.height = 25;		
@@ -67,7 +67,7 @@ public class Level29 implements Level{
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		float baseTime = 1f;
-		float baseTime2 = 5f;
+		float baseTime2 = 2.5f;
 		float r = 7f;
 		float temp = 17.5f;
 		
@@ -140,11 +140,11 @@ public class Level29 implements Level{
 
 	@Override
 	public void setMapState(Array<MapState> mapState) {
-		mapState.add(HardModel.MapState.START);
-		mapState.add(HardModel.MapState.PLAIN);
-		mapState.add(HardModel.MapState.PLAIN);
-		mapState.add(HardModel.MapState.PLAIN);
 		mapState.add(HardModel.MapState.FINISH);
+		mapState.add(HardModel.MapState.PLAIN);
+		mapState.add(HardModel.MapState.PLAIN);
+		mapState.add(HardModel.MapState.PLAIN);
+		mapState.add(HardModel.MapState.START);
 		
 	}
 

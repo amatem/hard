@@ -54,10 +54,10 @@ public class Level21 implements Level{
 	@Override
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
-		float baseTime = 1f;
+		float baseTime = 0.8f;
 		float temp = 17.5f;
-		float baseTime2 = 2f;
-		float baseTime3 = 3f;
+		float baseTime2 = 1.6f;
+		float baseTime3 = 2.4f;
 		
 		for (int i = 0; i < 5 ; i++)
 		{

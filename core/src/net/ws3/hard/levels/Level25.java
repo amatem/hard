@@ -64,9 +64,9 @@ public class Level25 implements Level{
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		CircleWrapper circleWrapper;
-		float baseTime = 1f;
+		float baseTime = 0.8f;
 		float temp = 17.5f;
-		float baseTime2 = 5f;
+		float baseTime2 = 3.2f;
 		
 		for (int i = 0 ; i < 5 ; i++)
 		{
