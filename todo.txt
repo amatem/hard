@@ -1,3 +1,4 @@
 - muzikler ve vibrate eklenecek
 - admob eklenecek
+- facebook integration eklenecek
 - performance duzeltilecek

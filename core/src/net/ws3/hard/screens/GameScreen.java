@@ -17,8 +17,8 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.scenes.scene2d.Action;
@@ -31,8 +31,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
-import com.badlogic.gdx.scenes.scene2d.ui.Touchpad.TouchpadStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Array;
@@ -47,9 +45,6 @@ public class GameScreen implements Screen, InputProcessor{
 	private HardController controller;
 	private InputMultiplexer im;
 	private Stage stage;
-	private Skin touchpadSkin;
-	private Touchpad touchpad;
-	private TouchpadStyle touchpadStyle;
 	private Label deathCount;
 	private Button soundButton;
 	private Skin hudSkin;
@@ -59,6 +54,7 @@ public class GameScreen implements Screen, InputProcessor{
 	private Button mainMenu;
 	private Image highScoreSplash;
 	private boolean isHighScoreFaded;
+	private FPSLogger fps;
 	
 	public GameScreen(HardGame gam, Level level, int leveli){
 		this.game = gam;
@@ -69,11 +65,11 @@ public class GameScreen implements Screen, InputProcessor{
 	}
 	
 	public void render(float delta){
+		fps.log();
 		Gdx.gl.glClearColor(0.1f, 0.1f, 0.1f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		if(!model.isEndGame()){
-			controller.setTouchpadPercents(touchpad.getKnobPercentX(), touchpad.getKnobPercentY());
 			model.updateTweens(delta);
 			controller.update(delta);
 			if(model.collisionControl()){
@@ -121,6 +117,7 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void show() {
+		fps = new FPSLogger();
 		isHighScoreFaded = true;
 		
 		model = new HardModel();
@@ -142,16 +139,7 @@ public class GameScreen implements Screen, InputProcessor{
 			}
 		}));
 		
-		touchpadSkin = new Skin();
-		touchpadSkin.add("touchBackground", new Texture(Gdx.files.internal("touchBackground.png")));
-		touchpadSkin.add("touchKnob", new Texture(Gdx.files.internal("touchKnob.png")));
-		touchpadStyle = new TouchpadStyle();
-		touchpadStyle.background = touchpadSkin.getDrawable("touchBackground");
-		touchpadStyle.knob = touchpadSkin.getDrawable("touchKnob");
-		touchpad = new Touchpad(10, touchpadStyle);
-		touchpad.setBounds(640, 10, 150, 150);
 		stage = new Stage(new StretchViewport(800, 480));
-		//stage.addActor(touchpad);
 		
 		hudSkin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
 		
@@ -222,7 +210,6 @@ public class GameScreen implements Screen, InputProcessor{
 		renderer.dispose();
 		stage.dispose();
 		hudSkin.dispose();
-		touchpadSkin.dispose();
 	}
 
 	@Override

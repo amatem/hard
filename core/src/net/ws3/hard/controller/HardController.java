@@ -112,9 +112,9 @@ public class HardController {
 			v.x = (touchPlayerX + draggedX - touchX - player.x) * delta * 20f;
 			v.y = (touchPlayerY + draggedY - touchY - player.y) * delta * 20f;
 			length = (float) Math.sqrt(v.x * v.x + v.y * v.y);
-			if(length > 290 * delta){
-				v.x *= (290 * delta) / length;
-				v.y *= (290 * delta) / length;
+			if(length > 250 * delta){
+				v.x *= (250 * delta) / length;
+				v.y *= (250 * delta) / length;
 			}
 		}
 		else{

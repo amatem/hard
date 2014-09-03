@@ -59,8 +59,8 @@ public class SwarmAndroid implements MySwarm{
 
 	@Override
 	public boolean isUnlockedLevels() {
-		//return true;
-		return isUnlockedLevels;
+		return true;
+		//return isUnlockedLevels;
 	}
 	
 	public void setUnlimitedLives(boolean isUnlimitedLives){

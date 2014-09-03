@@ -1,17 +1,17 @@
 package net.ws3.hard.levels;
 
+import net.ws3.hard.CircleWrapperAccessor;
+import net.ws3.hard.model.CircleWrapper;
+import net.ws3.hard.model.HardModel;
+import net.ws3.hard.model.HardModel.MapState;
+import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
-
-import net.ws3.hard.CircleWrapperAccessor;
-import net.ws3.hard.model.HardModel.MapState;
-import net.ws3.hard.model.CircleWrapper;
-import net.ws3.hard.model.HardModel;
-import net.ws3.hard.model.Level;
 
 public class Level11 implements Level{
 
@@ -98,6 +98,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);
@@ -112,6 +113,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);
@@ -126,6 +128,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);
@@ -140,6 +143,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);
@@ -154,6 +158,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);
@@ -168,6 +173,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);
@@ -182,6 +188,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);
@@ -196,6 +203,7 @@ public class Level11 implements Level{
 			circleWrapper = new CircleWrapper(circle, 400, 240);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(90)))
+				.ease(Linear.INOUT)
 				.repeat(-1, baseTime2)
 				.start(manager);
 			blueCircles.add(circle);

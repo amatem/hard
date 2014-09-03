@@ -1,7 +1,6 @@
 package net.ws3.hard;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.utils.TiledDrawable;
@@ -16,8 +15,8 @@ public class Assets {
 	public static TextureRegion playerTexture;
 	public static TextureRegion blueCircleTexture;
 	public static TextureRegion yellowCircleTexture;
-	public static Texture endGameBlack;
-	public static Texture highScoreSplash;
+	public static TextureRegion endGameBlack;
+	public static TextureRegion highScoreSplash;
 	
 	public static TiledDrawable mapWrapperTiled;
 	public static TiledDrawable mapTileTiled;
@@ -25,9 +24,9 @@ public class Assets {
 	
 	public static void loadAssets(){
 		gameTextures = new TextureAtlas(Gdx.files.internal("gameTextures.atlas"));
-		endGameBlack = new Texture(Gdx.files.internal("endgameblack.png"));
-		highScoreSplash = new Texture(Gdx.files.internal("highscore.png"));
 		
+		endGameBlack = gameTextures.findRegion("endgameblack");
+		highScoreSplash = gameTextures.findRegion("highscore");
 		bgTexture = gameTextures.findRegion("bg");
 		mapTileTexture = gameTextures.findRegion("mapTile");
 		mapNotPlainTexture = gameTextures.findRegion("mapNotPlain");
@@ -42,7 +41,6 @@ public class Assets {
 	}
 	
 	public static void dispose(){
-		endGameBlack.dispose();
 		gameTextures.dispose();
 	}
 }

@@ -147,8 +147,8 @@ public class Level8 implements Level{
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		float temp = 17.5f;
-		float baseTime = 1f;
-		float baseTime2 = 1.5f;
+		float baseTime = 0.6f;
+		float baseTime2 = 1.4f;
 		
 		for (int j = 0; j < 2 ; j++)
 		{
@@ -174,9 +174,9 @@ public class Level8 implements Level{
 		circle.y = 385 - temp ;
 		circle.radius = 7;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime2).target(290 + temp + 6* temp).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(290 + temp + 6* temp).ease(Linear.INOUT))
 			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime2).target(385 - temp - 14 * temp).ease(Linear.INOUT))
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime2).target(290 + temp).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(290 + temp).ease(Linear.INOUT))
 			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime2).target(385 - temp).ease(Linear.INOUT))
 		.repeat(-1, 0f)
 		.start(manager);

@@ -53,7 +53,8 @@ public class Level13 implements Level{
 	@Override
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
-		float baseTime = 1f;
+		float baseTime = 0.75f;
+		float baseTime2 = 1.35f;
 		float r = 7f;
 		float temp = 17.5f;
 		
@@ -89,7 +90,7 @@ public class Level13 implements Level{
 		circle.x = 225 + temp;
 		circle.y = 275 - temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.X, baseTime)
+		Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 			.target(575 - temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -100,7 +101,7 @@ public class Level13 implements Level{
 		circle.x = 575 - temp;
 		circle.y = 205 + temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.X, baseTime)
+		Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 			.target(225 + temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)

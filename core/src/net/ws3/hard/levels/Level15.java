@@ -21,7 +21,6 @@ public class Level15 implements Level{
 		position.y = 380f;
 		position.width = 25;
 		position.height = 25;
-		
 	}
 
 	@Override
@@ -124,7 +123,9 @@ public class Level15 implements Level{
 	@Override
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
-		float baseTime = 2.5f;
+		float baseTime = 0.4f;
+		float baseTime2 = 1.2f;
+		float baseTime3 = 1.8f;
 		float temp = 17.5f;
 		float r = 7f;
 		
@@ -134,7 +135,7 @@ public class Level15 implements Level{
 			circle.x = 190 + temp + 70f * i;
 			circle.y = 65 + temp;
 			circle.radius = r;
-			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime3)
 				.target(415 - temp)
 				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
@@ -148,7 +149,7 @@ public class Level15 implements Level{
 			circle.x = 225 + temp + 140f * i;
 			circle.y = 415 - temp;
 			circle.radius = r;
-			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime3)
 				.target(65 + temp)
 				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
@@ -162,7 +163,7 @@ public class Level15 implements Level{
 			circle.x = 50 + temp + 70f * i;
 			circle.y = 65 + temp;
 			circle.radius = r;
-			Tween.to(circle, BlueCircleAccessor.Y, baseTime / 2)
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 				.target(310 - temp)
 				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
@@ -174,7 +175,7 @@ public class Level15 implements Level{
 		circle.x = 85 + temp;
 		circle.y = 310 - temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime / 2)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(65 + temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -187,7 +188,7 @@ public class Level15 implements Level{
 			circle.x = 645 + temp + 70f * i;
 			circle.y = 415 - temp;
 			circle.radius = r;
-			Tween.to(circle, BlueCircleAccessor.Y, baseTime / 2)
+			Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 				.target(170 + temp)
 				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
@@ -199,7 +200,7 @@ public class Level15 implements Level{
 		circle.x = 680 + temp;
 		circle.y = 170 + temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime / 2)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(415 - temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -210,7 +211,7 @@ public class Level15 implements Level{
 		circle.x = 295 + temp;
 		circle.y = 415 - temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime / 4)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(310 + temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -221,7 +222,7 @@ public class Level15 implements Level{
 		circle.x = 435 + temp;
 		circle.y = 170 - temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime / 4)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(65 + temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -232,7 +233,7 @@ public class Level15 implements Level{
 		circle.x = 155 + temp;
 		circle.y = 170 - temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime / 4)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(65 + temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -243,7 +244,7 @@ public class Level15 implements Level{
 		circle.x = 610 + temp;
 		circle.y = 415 - temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime / 4)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(310 + temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -254,7 +255,7 @@ public class Level15 implements Level{
 		circle.x = 575 + temp;
 		circle.y = 310 + temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime / 4)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(415 - temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)

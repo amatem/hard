@@ -96,7 +96,8 @@ public class Level17 implements Level{
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		float temp = 17.5f;
-		float baseTime = 1f;
+		float baseTime = 2.7f;
+		float baseTime2 = 3.9f;
 		float r = 7f;
 
 		circle = new Circle();
@@ -144,7 +145,7 @@ public class Level17 implements Level{
 		circle.x = 120 + temp;
 		circle.y = 100 + temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.X, baseTime)
+		Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 			.target(610 - temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
@@ -155,7 +156,7 @@ public class Level17 implements Level{
 		circle.x = 680 - temp;
 		circle.y = 380 - temp;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.X, baseTime)
+		Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 			.target(190 + temp)
 			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
