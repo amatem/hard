@@ -2,6 +2,7 @@ package net.ws3.hard.levels;
 
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -56,6 +57,7 @@ public class Level14 implements Level{
 		Circle circle;
 		CircleWrapper circleWrapper;
 		float baseTime = 2.5f;
+		float baseTime2 = 1f;
 		float temp = 17.5f;
 		float r = 7f;
 		
@@ -68,6 +70,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -82,6 +85,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -96,6 +100,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -110,6 +115,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 225 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -124,6 +130,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -138,6 +145,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -152,6 +160,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -166,6 +175,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 365 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -180,6 +190,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -194,6 +205,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -208,6 +220,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -222,6 +235,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 505 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -236,6 +250,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -250,6 +265,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -264,6 +280,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -278,6 +295,7 @@ public class Level14 implements Level{
 			circleWrapper = new CircleWrapper(circle, 645 + temp, 170 + temp);
 			Tween.to(circleWrapper, CircleWrapperAccessor.R, baseTime)
 				.target((float)(circleWrapper.getAngle() + Math.toRadians(360)))
+				.ease(Linear.INOUT)
 				.repeat(-1, 0f)
 				.start(manager); 
 			blueCircles.add(circle);
@@ -311,8 +329,9 @@ public class Level14 implements Level{
 		circle.x = 295 + temp;
 		circle.y = 135 + r;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(240 - 3 * r - temp /3)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -321,8 +340,9 @@ public class Level14 implements Level{
 		circle.x = 295 + temp;
 		circle.y = 135 + 3 * r + temp / 3;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(240 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -331,8 +351,9 @@ public class Level14 implements Level{
 		circle.x = 575 + temp;
 		circle.y = 135 + r;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(240 - 3 * r - temp /3)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -341,8 +362,9 @@ public class Level14 implements Level{
 		circle.x = 575 + temp;
 		circle.y = 135 + 3 * r + temp / 3;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(240 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -351,8 +373,9 @@ public class Level14 implements Level{
 		circle.x = 435 + temp;
 		circle.y = 240 - r;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(135 + 3 * r + temp / 3)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -361,8 +384,9 @@ public class Level14 implements Level{
 		circle.x = 435 + temp;
 		circle.y = 240 - 3 * r - temp /3;
 		circle.radius = r;
-		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
+		Tween.to(circle, BlueCircleAccessor.Y, baseTime2)
 			.target(135 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);

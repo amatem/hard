@@ -1,17 +1,17 @@
 package net.ws3.hard.levels;
 
+import net.ws3.hard.BlueCircleAccessor;
+import net.ws3.hard.model.HardModel;
+import net.ws3.hard.model.HardModel.MapState;
+import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Timeline;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
-
-import net.ws3.hard.BlueCircleAccessor;
-import net.ws3.hard.model.HardModel.MapState;
-import net.ws3.hard.model.HardModel;
-import net.ws3.hard.model.Level;
 
 public class Level16 implements Level{
 
@@ -95,10 +95,10 @@ public class Level16 implements Level{
 				circle.y = 345 - temp - 70 * i;
 				circle.radius = r;
 				Timeline.createSequence()
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(120 + temp + 35 + 70 * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35 - 70 * i))
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(120 + temp + 70 * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 70 * i))
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(120 + temp + 35 + 70 * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35 - 70 * i).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(120 + temp + 70 * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 70 * i).ease(Linear.INOUT))
 				.repeat(-1, 0f)
 				.start(manager);
 				blueCircles.add(circle);
@@ -114,10 +114,10 @@ public class Level16 implements Level{
 				circle.y = 345 - temp - 70 * i;
 				circle.radius = r;
 				Timeline.createSequence()
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(330 + temp + 35 + 70 * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35 - 70 * i))
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(330 + temp + 70 * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 70 * i))
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(330 + temp + 35 + 70 * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35 - 70 * i).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(330 + temp + 70 * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 70 * i).ease(Linear.INOUT))
 				.repeat(-1, 0f)
 				.start(manager);
 				blueCircles.add(circle);
@@ -133,10 +133,10 @@ public class Level16 implements Level{
 				circle.y = 345 - temp - 70 * i;
 				circle.radius = 7;
 				Timeline.createSequence()
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(540 + temp + 35 + 70 * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35 - 70 * i))
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(540 + temp + 70 * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 70 * i))
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(540 + temp + 35 + 70 * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35 - 70 * i).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(540 + temp + 70 * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 70 * i).ease(Linear.INOUT))
 				.repeat(-1, 0f)
 				.start(manager);
 				blueCircles.add(circle);
@@ -148,10 +148,10 @@ public class Level16 implements Level{
 		circle.y = 205 - temp ;
 		circle.radius = r;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(260 + temp + 35))
-			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(205 - temp - 35))
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(260 + temp))
-			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(205 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(260 + temp + 35).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(205 - temp - 35).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(260 + temp).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(205 - temp).ease(Linear.INOUT))
 		.repeat(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);
@@ -161,10 +161,10 @@ public class Level16 implements Level{
 		circle.y = 345 - temp;
 		circle.radius = r;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(470 + temp + 35))
-			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35))
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(470 + temp))
-			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(470 + temp + 35).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp - 35).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(470 + temp).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(345 - temp).ease(Linear.INOUT))
 		.repeat(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);
@@ -174,29 +174,30 @@ public class Level16 implements Level{
 	public void setYellowCircles(Array<Circle> yellowCircles) {
 		Circle circle;
 		float temp = 17.5f;
+		float r = 7f;
 		
 		circle = new Circle();
 		circle.x = 330 + temp;
 		circle.y = 345 - temp;
-		circle.radius = 10;
+		circle.radius = r;
 		yellowCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 225 + temp;
 		circle.y = 345 - temp;
-		circle.radius = 10;
+		circle.radius = r;
 		yellowCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 435 + temp;
 		circle.y = 170 - temp;
-		circle.radius = 10;
+		circle.radius = r;
 		yellowCircles.add(circle);
 		
 		circle = new Circle();
 		circle.x = 540 + temp;
 		circle.y = 170 - temp;
-		circle.radius = 10;
+		circle.radius = r;
 		yellowCircles.add(circle);
 		
 	}

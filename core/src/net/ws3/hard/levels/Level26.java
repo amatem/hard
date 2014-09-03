@@ -6,6 +6,7 @@ import net.ws3.hard.model.HardModel.MapState;
 import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -155,6 +156,7 @@ public class Level26 implements Level{
 				circle.radius = 7;
 				Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 					.target(135 + temp - 70 * j)
+					.ease(Linear.INOUT)
 					.repeatYoyo(-1, 0f)
 					.start(manager);
 				blueCircles.add(circle);
@@ -171,6 +173,7 @@ public class Level26 implements Level{
 				circle.radius = 7;
 				Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 					.target(135 + temp - 70 * j)
+					.ease(Linear.INOUT)
 					.repeatYoyo(-1, 0f)
 					.start(manager);
 				blueCircles.add(circle);
@@ -187,6 +190,7 @@ public class Level26 implements Level{
 				circle.radius = 7;
 				Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 					.target(310 - temp - 70 * i + 35 * j)
+					.ease(Linear.INOUT)
 					.repeatYoyo(-1, 0f)
 					.start(manager);
 				blueCircles.add(circle);
@@ -203,6 +207,7 @@ public class Level26 implements Level{
 				circle.radius = 7;
 				Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 					.target(380 - temp - 70 * i -105 * j)
+					.ease(Linear.INOUT)
 					.repeatYoyo(-1, 0f)
 					.start(manager);
 				blueCircles.add(circle);
@@ -215,6 +220,7 @@ public class Level26 implements Level{
 		circle.radius = 7;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(170 - temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -225,6 +231,7 @@ public class Level26 implements Level{
 		circle.radius = 7;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(240 - temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);

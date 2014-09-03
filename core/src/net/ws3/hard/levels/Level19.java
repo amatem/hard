@@ -3,6 +3,7 @@ package net.ws3.hard.levels;
 import aurelienribon.tweenengine.Timeline;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -66,6 +67,7 @@ public class Level19 implements Level{
 			circle.radius = r;
 			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 				.target(135 + temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);	
@@ -79,6 +81,7 @@ public class Level19 implements Level{
 			circle.radius = r;
 			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 				.target(310 + temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);	
@@ -89,10 +92,10 @@ public class Level19 implements Level{
 		circle.y = 345 - r;
 		circle.radius = r;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 + r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 - r , 345 - r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 + r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(610 - r , 345 - r))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 + r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 - r , 345 - r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 + r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(610 - r , 345 - r).ease(Linear.INOUT))
 		.repeatYoyo(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);
@@ -102,10 +105,10 @@ public class Level19 implements Level{
 		circle.y = 345 - r;
 		circle.radius = r;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 + r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 + r , 345 - r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 + r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(190 + r , 345 - r))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 + r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 + r , 345 - r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 + r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(190 + r , 345 - r).ease(Linear.INOUT))
 		.repeatYoyo(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);
@@ -115,10 +118,10 @@ public class Level19 implements Level{
 		circle.y = 135 + r;
 		circle.radius = r;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 - r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 - r , 135 + r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 - r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(610 - r , 135 + r))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 - r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 - r , 135 + r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 - r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(610 - r , 135 + r).ease(Linear.INOUT))
 		.repeatYoyo(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);
@@ -128,10 +131,10 @@ public class Level19 implements Level{
 		circle.y = 135 + r;
 		circle.radius = r;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 - r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 + r , 135 + r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 - r))
-			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(190 + r , 135 + r))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(505 + r , 240 - r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(400 + r , 135 + r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(295 - r , 240 - r).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.XY, baseTime).target(190 + r , 135 + r).ease(Linear.INOUT))
 		.repeatYoyo(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);

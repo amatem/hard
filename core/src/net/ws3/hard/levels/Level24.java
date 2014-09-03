@@ -2,6 +2,7 @@ package net.ws3.hard.levels;
 
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -80,6 +81,7 @@ public class Level24 implements Level{
 			circle.radius = 7;
 			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 				.target(135 + temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
@@ -93,6 +95,7 @@ public class Level24 implements Level{
 			circle.radius = 7;
 			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 				.target(345 - temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
@@ -106,6 +109,7 @@ public class Level24 implements Level{
 			circle.radius = 7;
 			Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 				.target(750 - temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);
@@ -119,6 +123,7 @@ public class Level24 implements Level{
 			circle.radius = 7;
 			Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 				.target(50 + temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);

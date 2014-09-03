@@ -2,6 +2,7 @@ package net.ws3.hard.levels;
 
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -61,10 +62,11 @@ public class Level18 implements Level{
 		{	
 			circle = new Circle();
 			circle.x = 225 + temp + 70 * i;
-			circle.y = 275;
+			circle.y = 275 + temp;
 			circle.radius = r;
 			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
-				.target(205)
+				.target(205 - temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);	
@@ -74,10 +76,11 @@ public class Level18 implements Level{
 		{	
 			circle = new Circle();
 			circle.x = 260 + temp + 70 * i;
-			circle.y = 205;
+			circle.y = 205 - temp;
 			circle.radius = r;
 			Tween.to(circle, BlueCircleAccessor.Y, baseTime)
-				.target(275)
+				.target(275 + temp)
+				.ease(Linear.INOUT)
 				.repeatYoyo(-1, 0f)
 				.start(manager);
 			blueCircles.add(circle);	

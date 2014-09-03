@@ -2,6 +2,7 @@ package net.ws3.hard.levels;
 
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -106,6 +107,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(335 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -116,6 +118,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(335 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -126,6 +129,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(405 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -136,6 +140,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(405 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -146,6 +151,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(335 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -156,6 +162,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(265 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -166,6 +173,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(335 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -176,6 +184,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(65 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -186,6 +195,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(65 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -196,6 +206,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(65 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -206,6 +217,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(135 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -216,6 +228,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(135 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -226,6 +239,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(510 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -236,6 +250,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(510 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -246,6 +261,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(580 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -256,6 +272,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(440 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -266,6 +283,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(440 + r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -276,6 +294,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(510 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -286,6 +305,7 @@ public class Level10 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(510 - r)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);

@@ -6,6 +6,7 @@ import net.ws3.hard.model.HardModel.MapState;
 import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -72,6 +73,7 @@ public class Level1 implements Level{
 		circle.radius = 7;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(570)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -82,6 +84,7 @@ public class Level1 implements Level{
 		circle.radius = 7;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(570)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -92,6 +95,7 @@ public class Level1 implements Level{
 		circle.radius = 7;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(225)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -102,6 +106,7 @@ public class Level1 implements Level{
 		circle.radius = 7;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(225)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -109,13 +114,7 @@ public class Level1 implements Level{
 
 	@Override
 	public void setYellowCircles(Array<Circle> yellowCircles) {
-		Circle circle;
 		
-		circle = new Circle();
-		circle.x = 500;
-		circle.y = 240;
-		circle.radius = 10;
-		yellowCircles.add(circle);
 	}
 
 	@Override

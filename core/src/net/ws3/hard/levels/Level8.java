@@ -7,6 +7,7 @@ import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Timeline;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -158,12 +159,12 @@ public class Level8 implements Level{
 				circle.y = 420 - temp - 6 * temp * i;
 				circle.radius = 7;
 				Timeline.createSequence()
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(185 + temp + 6* temp + 6 * temp * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(420 - temp - 6 * temp * i - 6 * temp))
-					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(185 + temp + 18 * temp * j))
-					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(420 - temp - 6 * temp * i))
-				.repeat(-1, 0f)
-				.start(manager);
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(185 + temp + 6* temp + 6 * temp * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(420 - temp - 6 * temp * i - 6 * temp).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.X, baseTime).target(185 + temp + 18 * temp * j).ease(Linear.INOUT))
+					.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime).target(420 - temp - 6 * temp * i).ease(Linear.INOUT))
+					.repeat(-1, 0f)
+					.start(manager);
 				blueCircles.add(circle);
 			}
 		}
@@ -173,10 +174,10 @@ public class Level8 implements Level{
 		circle.y = 385 - temp ;
 		circle.radius = 7;
 		Timeline.createSequence()
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime2).target(290 + temp + 6* temp))
-			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime2).target(385 - temp - 14 * temp))
-			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime2).target(290 + temp))
-			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime2).target(385 - temp))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime2).target(290 + temp + 6* temp).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime2).target(385 - temp - 14 * temp).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.X, baseTime2).target(290 + temp).ease(Linear.INOUT))
+			.push(Tween.to(circle, BlueCircleAccessor.Y, baseTime2).target(385 - temp).ease(Linear.INOUT))
 		.repeat(-1, 0f)
 		.start(manager);
 		blueCircles.add(circle);

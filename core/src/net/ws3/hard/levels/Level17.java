@@ -6,6 +6,7 @@ import net.ws3.hard.model.HardModel.MapState;
 import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -134,6 +135,7 @@ public class Level17 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(100 + temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -144,6 +146,7 @@ public class Level17 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(610 - temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -154,6 +157,7 @@ public class Level17 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(190 + temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -164,6 +168,7 @@ public class Level17 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(380 - temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -174,6 +179,7 @@ public class Level17 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 			.target(380 - temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -184,6 +190,7 @@ public class Level17 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(610 - temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
@@ -194,12 +201,10 @@ public class Level17 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime)
 			.target(610 - temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
-		
-		
-
 	}
 
 	@Override

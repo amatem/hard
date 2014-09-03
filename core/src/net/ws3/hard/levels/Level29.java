@@ -6,6 +6,7 @@ import net.ws3.hard.model.HardModel;
 import net.ws3.hard.model.Level;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
+import aurelienribon.tweenengine.equations.Linear;
 
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
@@ -80,6 +81,7 @@ public class Level29 implements Level{
 				circle.radius = r;
 				Tween.to(circle, BlueCircleAccessor.Y, baseTime)
 					.target(100 - temp + 210 * j)
+					.ease(Linear.INOUT)
 					.repeatYoyo(-1, 0f)
 					.start(manager);
 				blueCircles.add(circle);
@@ -96,6 +98,7 @@ public class Level29 implements Level{
 				circle.radius = r;
 				Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 					.target(645 + temp - 525 * j)
+					.ease(Linear.INOUT)
 					.repeatYoyo(-1, 0f)
 					.start(manager);
 				blueCircles.add(circle);
@@ -108,6 +111,7 @@ public class Level29 implements Level{
 		circle.radius = r;
 		Tween.to(circle, BlueCircleAccessor.X, baseTime2)
 			.target(120 + temp)
+			.ease(Linear.INOUT)
 			.repeatYoyo(-1, 0f)
 			.start(manager);
 		blueCircles.add(circle);
