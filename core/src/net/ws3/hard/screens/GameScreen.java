@@ -73,6 +73,7 @@ public class GameScreen implements Screen, InputProcessor{
 			model.updateTweens(delta);
 			controller.update(delta);
 			if(model.collisionControl()){
+				Assets.playPunch();
 				UserData.death();
 				if(!game.getSwarm().isUnlimitedLives() && UserData.getLifes() < 0)
 					game.setScreen(new NoLifeScreen(game));
@@ -80,7 +81,8 @@ public class GameScreen implements Screen, InputProcessor{
 				model.respawn();
 				controller.updateTouch();
 			}
-			model.eatYellowFuckers();
+			if(model.eatYellowFuckers())
+				Assets.playDollar();
 			model.savePosition();
 		}	
 		else{

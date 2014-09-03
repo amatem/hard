@@ -124,15 +124,20 @@ public class HardModel {
 		return false;
 	}
 	
-	public void eatYellowFuckers(){
+	public boolean eatYellowFuckers(){
+		boolean rev = false;
 		Iterator<Circle> iterator = tempYellowCircles.iterator();
 		Circle circle;
 		
 		while(iterator.hasNext()){
 			circle = iterator.next();
-			if(Intersector.overlaps(circle, player))
+			if(Intersector.overlaps(circle, player)){
 				iterator.remove();
+				rev = true;
+			}
 		}
+		
+		return rev;
 	}
 	
 	public boolean isEndGame(){
