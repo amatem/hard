@@ -52,6 +52,7 @@ public class HardGame extends Game {
 	@Override
 	public void create() {
 		UserData.loadUserData();
+		Assets.loadAssets();
         Gdx.input.setCatchBackKey(true);
 		this.setScreen(new MainMenuScreen(this));
 	}
@@ -162,5 +163,6 @@ public class HardGame extends Game {
 	public void dispose(){
 		Gdx.input.setInputProcessor(null);
 		UserData.dispose();
+		Assets.dispose();
 	}
 }

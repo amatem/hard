@@ -1,7 +1,6 @@
 package net.ws3.hard.android;
 
 import net.ws3.hard.HardGame;
-import net.ws3.hard.MySwarm;
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -22,16 +21,15 @@ public class AndroidLauncher extends AndroidApplication {
 		config.useCompass = false;
 		
 		Swarm.setAllowGuests(true);
-	    Swarm.setActive(this);
-	    
-	    swarm = new SwarmAndroid();
+	    swarm = new SwarmAndroid(this);
 		initialize(new HardGame(swarm), config);
 	}
 	
 	public void onResume() {
 	    super.onResume();
 	    Swarm.setActive(this);
-	    Swarm.init(this, 12965, "4549d82b924d92f9be97f5a7e4171f81", new mySwarmLoginListener(swarm));
+	    if(Swarm.isEnabled())
+	    	Swarm.init(this, 12965, "4549d82b924d92f9be97f5a7e4171f81", new mySwarmLoginListener(swarm));
 	}
 
 	public void onPause() {
@@ -67,7 +65,6 @@ public class AndroidLauncher extends AndroidApplication {
 		public void userLoggedOut() {
 			// TODO Auto-generated method stub
 			
-		}
-		
+		}	
 	}
 }

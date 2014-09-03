@@ -24,6 +24,7 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -129,6 +130,7 @@ public class GameScreen implements Screen, InputProcessor{
 		highScoreSplash = new Image(Assets.highScoreSplash);
 		highScoreSplash.setCenterPosition(400, 240);
 		highScoreSplash.getColor().a = 0f;
+		highScoreSplash.setTouchable(Touchable.disabled);
 		highScoreSplash.addAction(Actions.sequence(Actions.fadeIn(1f), Actions.delay(1f), Actions.fadeOut(1f), new Action(){
 			@Override
 			public boolean act(float delta){
@@ -147,7 +149,7 @@ public class GameScreen implements Screen, InputProcessor{
 		touchpad = new Touchpad(10, touchpadStyle);
 		touchpad.setBounds(640, 10, 150, 150);
 		stage = new Stage(new StretchViewport(800, 480));
-		stage.addActor(touchpad);
+		//stage.addActor(touchpad);
 		
 		hudSkin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
 		
@@ -214,6 +216,7 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void dispose() {
+		UserData.dispose();
 		renderer.dispose();
 		stage.dispose();
 		hudSkin.dispose();
@@ -256,22 +259,22 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		/*controller.setTouchDown(screenX, 480 - screenY);
-		System.out.println("TOUCHDOWN = screenX: " + screenX + " - screenY: " + screenY);*/
+		controller.setTouchDown(screenX, 480 - screenY);
+		System.out.println("TOUCHDOWN = screenX: " + screenX + " - screenY: " + screenY);
 		return false;
 	}
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-		/*controller.setTouchUp();
-		System.out.println("TOUCHUP = screenX: " + screenX + " - screenY: " + screenY);*/
+		controller.setTouchUp();
+		System.out.println("TOUCHUP = screenX: " + screenX + " - screenY: " + screenY);
 		return false;
 	}
 
 	@Override
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
-		/*controller.setTouchDragged(screenX, 480 - screenY);
-		System.out.println("TOUCHDRAGGED = screenX: " + screenX + " - screenY: " + screenY);*/
+		controller.setTouchDragged(screenX, 480 - screenY);
+		System.out.println("TOUCHDRAGGED = screenX: " + screenX + " - screenY: " + screenY);
 		return false;
 	}
 

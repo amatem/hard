@@ -23,7 +23,6 @@ public class HardRenderer {
 	private boolean debug;
 	
 	public HardRenderer(HardModel model, boolean debug){
-		Assets.loadAssets();
 		this.model = model;
 		this.debug = debug;
 		
@@ -124,7 +123,6 @@ public class HardRenderer {
 	}
 	
 	public void dispose(){
-		Assets.dispose();
 		batch.dispose();
 		if(debug)
 			debugRenderer.dispose();

@@ -5,4 +5,3 @@
 - android kontrol denenecek
 - splash screen eklenecek
 - caniniz kalmadi ekrani eklenecek
-- bilgi ekranlari eklenecek

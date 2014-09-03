@@ -28,6 +28,6 @@ public class SwarmDesktop implements MySwarm{
 	@Override
 	public boolean isUnlockedLevels() {
 		System.out.println("User tried to access isUnlockedLevels");
-		return false;
+		return true;
 	}
 }
