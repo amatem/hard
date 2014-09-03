@@ -1,0 +1,27 @@
+
+nolife.png
+size: 1022,482
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+nolifescreen
+  rotate: false
+  xy: 2, 2
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
+store1
+  rotate: false
+  xy: 804, 307
+  size: 218, 175
+  orig: 218, 175
+  offset: 0, 0
+  index: -1
+store2
+  rotate: false
+  xy: 804, 130
+  size: 218, 175
+  orig: 218, 175
+  offset: 0, 0
+  index: -1

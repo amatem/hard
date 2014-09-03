@@ -1,6 +1,7 @@
 package net.ws3.hard.screens;
 
 import net.ws3.hard.HardGame;
+import net.ws3.hard.model.UserData;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -11,17 +12,22 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
 public class MainMenuScreen implements Screen{
 	private final HardGame game;
 	private Stage stage;
+	private Skin hudSkin;
 	private Skin skin;
 	private Table table;
 	private Button playGame, leaderboard, store;
+	private Label deathCount;
+	private Button soundButton;
 	
 	public MainMenuScreen(HardGame gam){
 		this.game = gam;
@@ -84,6 +90,17 @@ public class MainMenuScreen implements Screen{
 		
 		stage.addActor(new Image(skin, "mainmenubg"));
 		stage.addActor(table);
+		
+		hudSkin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
+		
+		deathCount = new Label("" + UserData.getLifes(), hudSkin, "deathCount");
+		deathCount.setAlignment(Align.center);
+		deathCount.setBounds(0, 401, 61, 79);
+		stage.addActor(deathCount);
+		
+		soundButton = new Button(hudSkin, "sound");
+		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
+		stage.addActor(soundButton);
 		Gdx.input.setInputProcessor(stage);
 	}
 

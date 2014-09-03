@@ -10,10 +10,13 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
@@ -23,6 +26,9 @@ public class LevelScreen implements Screen{
 	private Skin skin;
 	private Table table;
 	private TextButton textButton;
+	private Skin hudSkin;
+	private Label deathCount;
+	private Button soundButton;
 	
 	public LevelScreen(HardGame gam){
 		this.game = gam;
@@ -70,6 +76,17 @@ public class LevelScreen implements Screen{
 		
 		stage.addActor(new Image(skin, "mainmenubg"));
 		stage.addActor(table);
+		
+		hudSkin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
+		
+		deathCount = new Label("" + UserData.getLifes(), hudSkin, "deathCount");
+		deathCount.setAlignment(Align.center);
+		deathCount.setBounds(0, 401, 61, 79);
+		stage.addActor(deathCount);
+		
+		soundButton = new Button(hudSkin, "sound");
+		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
+		stage.addActor(soundButton);
 		Gdx.input.setInputProcessor(stage);
 	}
 
@@ -108,7 +125,9 @@ public class LevelScreen implements Screen{
 		
 		@Override
 		public void clicked(InputEvent event, float x, float y){
-			if(UserData.isFirstTime())
+			if(!game.getSwarm().isUnlimitedLives() && UserData.getLifes() < 0)
+				game.setScreen(new NoLifeScreen(game));
+			else if(UserData.isFirstTime())
 				game.setScreen(new IntroScreen(game, level));
 			else
 				game.openLevel(level);

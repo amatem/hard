@@ -78,6 +78,8 @@ public class GameScreen implements Screen, InputProcessor{
 			controller.update(delta);
 			if(model.collisionControl()){
 				UserData.death();
+				if(!game.getSwarm().isUnlimitedLives() && UserData.getLifes() < 0)
+					game.setScreen(new NoLifeScreen(game));
 				deathCount.setText("" + UserData.getLifes());
 				model.respawn();
 				controller.updateTouch();

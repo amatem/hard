@@ -1,7 +1,3 @@
 - muzikler ve vibrate eklenecek
 - admob eklenecek
-- kalan bolumler eklenecek (30)
 - performance duzeltilecek
-- android kontrol denenecek
-- splash screen eklenecek
-- caniniz kalmadi ekrani eklenecek

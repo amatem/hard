@@ -24,7 +24,7 @@ public class UserData {
 			}
 			prefs.putBoolean("1b", false);
 			lockStatus[1] = false;
-			prefs.putInteger("lifes", 500);
+			prefs.putInteger("lifes", 250);
 			prefs.putInteger("lastlifeupdate", Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
 			lifes = 1000;
 			firstTime = true;

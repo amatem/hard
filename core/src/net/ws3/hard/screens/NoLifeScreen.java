@@ -19,19 +19,19 @@ import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 
-public class IntroScreen implements Screen{
+public class NoLifeScreen implements Screen{
 	private final HardGame game;
+	
 	private Stage stage;
 	private Skin skin;
 	private Image bg;
-	private Button button;
+	private Button storeButton;
+	
 	private Skin hudSkin;
 	private Label deathCount;
 	private Button soundButton;
-	private final int levelid;
 	
-	public IntroScreen(HardGame gam, int leveli){
-		this.levelid = leveli;
+	public NoLifeScreen(HardGame gam){
 		this.game = gam;
 	}
 
@@ -42,9 +42,9 @@ public class IntroScreen implements Screen{
 		
 		stage.act(delta);
 		stage.draw();
-		
+
 		if(Gdx.input.isKeyPressed(Keys.BACK))
-			game.setScreen(new LevelScreen(game));
+			game.setScreen(new MainMenuScreen(game));
 	}
 
 	@Override
@@ -54,26 +54,25 @@ public class IntroScreen implements Screen{
 
 	@Override
 	public void show() {
-		skin = new Skin(new TextureAtlas(Gdx.files.internal("intro/intro.atlas")));
+		stage = new Stage(new StretchViewport(800, 480));
+		skin = new Skin(new TextureAtlas(Gdx.files.internal("nolife/nolife.atlas")));
+		
+		bg = new Image(skin.getRegion("nolifescreen"));
+		bg.setBounds(0, 0, 800, 480);
+		stage.addActor(bg);
 		
 		ButtonStyle buttonStyle = new ButtonStyle();
-		buttonStyle.down = skin.getDrawable("introplay2");
-		buttonStyle.up = skin.getDrawable("introplay1");
-		button = new Button(buttonStyle);
-		button.setPosition(580, 50);
-		button.addListener(new ClickListener(){
+		buttonStyle.down = skin.getDrawable("store2");
+		buttonStyle.up = skin.getDrawable("store1");
+		storeButton = new Button(buttonStyle);
+		storeButton.setPosition(460, 55);
+		storeButton.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
-				game.openLevel(levelid);
+				game.getSwarm().showStore();
 			}
 		});
-		
-		bg = new Image(skin.getRegion("intromenu"));
-		
-		stage = new Stage(new StretchViewport(800, 480));
-		
-		stage.addActor(bg);
-		stage.addActor(button);
+		stage.addActor(storeButton);
 		
 		hudSkin = new Skin(Gdx.files.internal("hud/hud.json"), new TextureAtlas(Gdx.files.internal("hud/hud.atlas")));
 		
@@ -111,5 +110,5 @@ public class IntroScreen implements Screen{
 		skin.dispose();
 		stage.dispose();
 	}
-
+	
 }
