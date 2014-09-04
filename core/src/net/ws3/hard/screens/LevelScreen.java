@@ -59,10 +59,8 @@ public class LevelScreen implements Screen{
 		table = new Table();
 		table.setFillParent(true);
 		
-		boolean unlockAll = game.getSwarm().isUnlockedLevels();
-		
 		for(int i = 1; i <= 30; i++){
-			if(!unlockAll && UserData.isLevelLocked(i))
+			if(UserData.isLevelLocked(i))
 				textButton = new TextButton("L", skin);
 			else{
 				textButton = new TextButton("" + i, skin);
@@ -125,7 +123,7 @@ public class LevelScreen implements Screen{
 		
 		@Override
 		public void clicked(InputEvent event, float x, float y){
-			if(!game.getSwarm().isUnlimitedLives() && UserData.getLifes() < 0)
+			if(UserData.getLifes() < 0)
 				game.setScreen(new NoLifeScreen(game));
 			else if(UserData.isFirstTime())
 				game.setScreen(new IntroScreen(game, level));

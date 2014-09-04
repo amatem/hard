@@ -69,7 +69,6 @@ public class NoLifeScreen implements Screen{
 		storeButton.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
-				game.getSwarm().showStore();
 			}
 		});
 		stage.addActor(storeButton);

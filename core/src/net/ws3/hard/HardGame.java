@@ -37,16 +37,9 @@ import net.ws3.hard.screens.MainMenuScreen;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 
-public class HardGame extends Game {
-	private MySwarm swarm; 
-	
-	public HardGame(MySwarm swarm){
+public class HardGame extends Game { 
+	public HardGame(){
 		super();
-		this.swarm = swarm;
-	}
-	
-	public MySwarm getSwarm(){
-		return swarm;
 	}
 	
 	@Override

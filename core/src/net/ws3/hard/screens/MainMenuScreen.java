@@ -74,7 +74,6 @@ public class MainMenuScreen implements Screen{
 		leaderboard.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
-				game.getSwarm().showLeaderboards();
 			}
 		});
 		table.add(leaderboard).padRight(10);
@@ -83,7 +82,6 @@ public class MainMenuScreen implements Screen{
 		store.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
-				game.getSwarm().showStore();
 			}
 		});
 		table.add(store);
