@@ -82,7 +82,7 @@ public class Level4 implements Level{
 	public void setBlueCircles(Array<Circle> blueCircles, TweenManager manager) {
 		Circle circle;
 		CircleWrapper circleWrapper;
-		float baseTime = 2f;
+		float baseTime = 2.4f;
 		
 		//middle point
 		circle = new Circle();
