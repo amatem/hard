@@ -60,7 +60,7 @@ public class LevelScreen implements Screen{
 		table.setFillParent(true);
 		
 		for(int i = 1; i <= 30; i++){
-			if(UserData.isLevelLocked(i))
+			if(UserData.isLevelLocked(i) && false)
 				textButton = new TextButton("L", skin);
 			else{
 				textButton = new TextButton("" + i, skin);

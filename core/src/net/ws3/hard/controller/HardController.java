@@ -79,6 +79,7 @@ public class HardController {
 	}
 	
 	public void setTouchDragged(int x, int y){
+		System.out.println("X: " + x + " - Y: " + y);
 		isTouched = true;
 		draggedX = x;
 		draggedY = y;
@@ -109,13 +110,26 @@ public class HardController {
 		
 		if(isTouched){
 			Rectangle player = model.getPlayer();
-			v.x = (touchPlayerX + draggedX - touchX - player.x) * delta * 20f;
+			/*v.x = (touchPlayerX + draggedX - touchX - player.x) * delta * 20f;
 			v.y = (touchPlayerY + draggedY - touchY - player.y) * delta * 20f;
 			length = (float) Math.sqrt(v.x * v.x + v.y * v.y);
 			if(length > 270 * delta){
 				v.x *= (270 * delta) / length;
 				v.y *= (270 * delta) / length;
+			}*/
+			if((draggedX - touchX) * (draggedX - touchX) + (draggedY - touchY) * (draggedY - touchY) >= 3){
+				v.x = (draggedX - touchX) * delta * 40f;
+				v.y = (draggedY - touchY) * delta * 40f;
+				touchX = draggedX;
+				touchY = draggedY;
+				length = (float) Math.sqrt(v.x * v.x + v.y * v.y);
+				if(length > 270 * delta){
+					v.x *= (270 * delta) / length;
+					v.y *= (270 * delta) / length;
+				}
 			}
+			else
+				System.out.println("draggedX: " + draggedX + " - draggedY: " + draggedY + " - touchX:" + touchX + " - touchY: " + touchY);
 		}
 		else{
 			v.x += touchpadX * 240 * delta;

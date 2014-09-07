@@ -17,7 +17,6 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Circle;
@@ -54,7 +53,6 @@ public class GameScreen implements Screen, InputProcessor{
 	private Button mainMenu;
 	private Image highScoreSplash;
 	private boolean isHighScoreFaded;
-	private FPSLogger fps;
 	
 	public GameScreen(HardGame gam, Level level, int leveli){
 		this.game = gam;
@@ -65,7 +63,6 @@ public class GameScreen implements Screen, InputProcessor{
 	}
 	
 	public void render(float delta){
-		fps.log();
 		Gdx.gl.glClearColor(0.1f, 0.1f, 0.1f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
@@ -119,7 +116,6 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void show() {
-		fps = new FPSLogger();
 		isHighScoreFaded = true;
 		
 		model = new HardModel();
