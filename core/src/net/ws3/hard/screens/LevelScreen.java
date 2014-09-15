@@ -1,5 +1,6 @@
 package net.ws3.hard.screens;
 
+import net.ws3.hard.Assets;
 import net.ws3.hard.HardGame;
 import net.ws3.hard.model.UserData;
 
@@ -60,7 +61,7 @@ public class LevelScreen implements Screen{
 		table.setFillParent(true);
 		
 		for(int i = 1; i <= 30; i++){
-			if(UserData.isLevelLocked(i) && false)
+			if(UserData.isLevelLocked(i))
 				textButton = new TextButton("L", skin);
 			else{
 				textButton = new TextButton("" + i, skin);
@@ -85,6 +86,15 @@ public class LevelScreen implements Screen{
 		soundButton = new Button(hudSkin, "sound");
 		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
 		stage.addActor(soundButton);
+		if(!Assets.isSoundOn)
+			soundButton.setChecked(true);
+		soundButton.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y){
+				Assets.setSoundOn(!Assets.isSoundOn);
+			}
+		});
+		
 		Gdx.input.setInputProcessor(stage);
 	}
 
@@ -123,9 +133,7 @@ public class LevelScreen implements Screen{
 		
 		@Override
 		public void clicked(InputEvent event, float x, float y){
-			if(UserData.getLifes() < 0)
-				game.setScreen(new NoLifeScreen(game));
-			else if(UserData.isFirstTime())
+			if(UserData.isFirstTime())
 				game.setScreen(new IntroScreen(game, level));
 			else
 				game.openLevel(level);

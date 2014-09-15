@@ -1,5 +1,6 @@
 package net.ws3.hard.screens;
 
+import net.ws3.hard.Assets;
 import net.ws3.hard.HardGame;
 import net.ws3.hard.model.UserData;
 
@@ -25,7 +26,7 @@ public class MainMenuScreen implements Screen{
 	private Skin hudSkin;
 	private Skin skin;
 	private Table table;
-	private Button playGame, leaderboard, store;
+	private Button playGame, leaderboard;
 	private Label deathCount;
 	private Button soundButton;
 	
@@ -76,15 +77,15 @@ public class MainMenuScreen implements Screen{
 			public void clicked(InputEvent event, float x, float y){
 			}
 		});
-		table.add(leaderboard).padRight(10);
+		table.add(leaderboard);
 		
-		store = new Button(skin, "store");
+		/*store = new Button(skin, "store");
 		store.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
 			}
 		});
-		table.add(store);
+		table.add(store);*/
 		
 		stage.addActor(new Image(skin, "mainmenubg"));
 		stage.addActor(table);
@@ -99,6 +100,15 @@ public class MainMenuScreen implements Screen{
 		soundButton = new Button(hudSkin, "sound");
 		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
 		stage.addActor(soundButton);
+		if(!Assets.isSoundOn)
+			soundButton.setChecked(true);
+		soundButton.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y){
+				Assets.setSoundOn(!Assets.isSoundOn);
+			}
+		});
+		
 		Gdx.input.setInputProcessor(stage);
 	}
 

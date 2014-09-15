@@ -1,7 +1,5 @@
 package net.ws3.hard.model;
 
-import java.util.Calendar;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 
@@ -24,9 +22,8 @@ public class UserData {
 			}
 			prefs.putBoolean("1b", false);
 			lockStatus[1] = false;
-			prefs.putInteger("lifes", 250);
-			prefs.putInteger("lastlifeupdate", Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
-			lifes = 250;
+			prefs.putInteger("lifes", 0);
+			lifes = 0;
 			firstTime = true;
 		}
 		else{
@@ -35,12 +32,6 @@ public class UserData {
 				bestScores[i] = prefs.getInteger(i + "i", -1);
 				lockStatus[i] = prefs.getBoolean(i + "b", false);
 			}
-			if(prefs.getInteger("lastlifeupdate") != Calendar.getInstance().get(Calendar.DAY_OF_WEEK)){
-				lifes = prefs.getInteger("lifes") + 100;
-				prefs.putInteger("lastlifeupdate", Calendar.getInstance().get(Calendar.DAY_OF_WEEK));
-			}
-			else
-				lifes = prefs.getInteger("lifes");
 		}
 	}
 	
@@ -84,7 +75,7 @@ public class UserData {
 	}
 	
 	public static void death(){
-		lifes--;
+		lifes++;
 		prefs.putInteger("lifes", lifes);
 	}
 	

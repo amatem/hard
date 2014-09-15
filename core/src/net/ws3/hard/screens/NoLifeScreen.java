@@ -1,5 +1,6 @@
 package net.ws3.hard.screens;
 
+import net.ws3.hard.Assets;
 import net.ws3.hard.HardGame;
 import net.ws3.hard.model.UserData;
 
@@ -83,6 +84,14 @@ public class NoLifeScreen implements Screen{
 		soundButton = new Button(hudSkin, "sound");
 		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
 		stage.addActor(soundButton);
+		if(!Assets.isSoundOn)
+			soundButton.setChecked(true);
+		soundButton.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y){
+				Assets.setSoundOn(!Assets.isSoundOn);
+			}
+		});
 		
 		Gdx.input.setInputProcessor(stage);
 	}

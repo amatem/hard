@@ -72,8 +72,6 @@ public class GameScreen implements Screen, InputProcessor{
 			if(model.collisionControl()){
 				Assets.playPunch();
 				UserData.death();
-				if(UserData.getLifes() < 0)
-					game.setScreen(new NoLifeScreen(game));
 				deathCount.setText("" + UserData.getLifes());
 				model.respawn();
 				controller.updateTouch();
@@ -149,6 +147,14 @@ public class GameScreen implements Screen, InputProcessor{
 		soundButton = new Button(hudSkin, "sound");
 		soundButton.setBounds(800 - 64, 480 - 64, 64, 64);
 		stage.addActor(soundButton);
+		if(!Assets.isSoundOn)
+			soundButton.setChecked(true);
+		soundButton.addListener(new ClickListener(){
+			@Override
+			public void clicked(InputEvent event, float x, float y){
+				Assets.setSoundOn(!Assets.isSoundOn);
+			}
+		});
 		
 		endGameTable = new Table();
 		endGameTable.setBackground(hudSkin.getDrawable("endgamebg"));
