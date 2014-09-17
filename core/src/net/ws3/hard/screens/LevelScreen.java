@@ -63,16 +63,20 @@ public class LevelScreen implements Screen{
 		table.setFillParent(true);
 		
 		for(int i = 1; i <= 30; i++){
-			if(UserData.isLevelLocked(i))
-				textButton = new TextButton("L", skin);
+			if(UserData.isLevelLocked(i)){
+				if(i % 8 != 0)
+					table.add(new Image(skin.getDrawable("locked"))).padRight(5).padBottom(5);
+				else
+					table.add(new Image(skin.getDrawable("locked"))).padBottom(5).row();
+			}
 			else{
 				textButton = new TextButton("" + i, skin);
 				textButton.addListener(new LevelListener(game, i));
+				if(i % 8 != 0)
+					table.add(textButton).padRight(5).padBottom(5);
+				else
+					table.add(textButton).padBottom(5).row();
 			}
-			if(i % 8 != 0)
-				table.add(textButton).padRight(5).padBottom(5);
-			else
-				table.add(textButton).padBottom(5).row();
 		}
 		
 		stage.addActor(new Image(skin, "mainmenubg"));

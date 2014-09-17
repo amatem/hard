@@ -114,6 +114,24 @@ public class AndroidLauncher extends AndroidApplication implements GameHelperLis
 	}
 	
 	@Override
+	public void onResume() {
+		super.onResume();
+		if (adView != null) adView.resume();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		if (adView != null) adView.pause();
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (adView != null) adView.destroy();
+	}
+	
+	@Override
 	public void onActivityResult(int request, int response, Intent data){
 		super.onActivityResult(request, response, data);
 		gameHelper.onActivityResult(request, response, data);

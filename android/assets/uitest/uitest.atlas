@@ -20,7 +20,7 @@ leaderboard2
   index: -1
 level1
   rotate: false
-  xy: 804, 506
+  xy: 2, 2
   size: 66, 63
   split: 21, 21, 29, 18
   orig: 66, 63
@@ -28,10 +28,17 @@ level1
   index: -1
 level2
   rotate: false
-  xy: 2, 2
+  xy: 348, 378
   size: 66, 63
   split: 21, 21, 29, 19
   orig: 66, 63
+  offset: 0, 0
+  index: -1
+locked
+  rotate: false
+  xy: 804, 501
+  size: 66, 68
+  orig: 66, 68
   offset: 0, 0
   index: -1
 mainmenubg
