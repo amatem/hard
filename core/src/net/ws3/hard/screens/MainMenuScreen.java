@@ -75,6 +75,7 @@ public class MainMenuScreen implements Screen{
 		leaderboard.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y){
+				game.getGoogle().showScores();
 			}
 		});
 		table.add(leaderboard);

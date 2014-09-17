@@ -60,18 +60,34 @@ public class UserData {
 	}
 	
 	public static int getHighScore(int level){
-		return prefs.getInteger(level + "i", -1);
+		return bestScores[level];
 	}
 	
 	public static void saveHighscore(int level, int highscore){
-		int oldscore = prefs.getInteger(level + "i", -1);
-		if(oldscore == -1 || oldscore > highscore)
+		int oldscore = bestScores[level];
+		if(oldscore == -1 || oldscore > highscore){
 			prefs.putInteger(level + "i", highscore);
+			bestScores[level] = highscore;
+		}
+	}
+	
+	public static boolean isAllLevelsFinished(){
+		for(int i = 1; i <= 30; i++)
+			if(bestScores[i] == -1)
+				return false;
+		return true;
 	}
 	
 	public static int getLifes(){
 		System.out.println("LIFES: " + lifes);
 		return lifes;
+	}
+	
+	public static long getAllScore(){
+		long rev = 0;
+		for(int i = 1; i <= 30; i++)
+			rev += bestScores[i];
+		return rev;
 	}
 	
 	public static void death(){

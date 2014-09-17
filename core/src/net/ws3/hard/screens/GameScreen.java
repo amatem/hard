@@ -53,6 +53,7 @@ public class GameScreen implements Screen, InputProcessor{
 	private Button mainMenu;
 	private Image highScoreSplash;
 	private boolean isHighScoreFaded;
+	private boolean isScoreSubmitted;
 	
 	public GameScreen(HardGame gam, Level level, int leveli){
 		this.game = gam;
@@ -96,6 +97,10 @@ public class GameScreen implements Screen, InputProcessor{
 				isHighScoreFaded = false;
 			}
 			else if(isHighScoreFaded){
+				if(!isScoreSubmitted && UserData.isAllLevelsFinished()){
+					isScoreSubmitted = true;
+					game.getGoogle().submitScore(UserData.getAllScore());
+				}
 				UserData.unlockNextLevel(levelid);
 				stage.addActor(endGameTable);
 			}
@@ -114,6 +119,7 @@ public class GameScreen implements Screen, InputProcessor{
 
 	@Override
 	public void show() {
+		isScoreSubmitted = true;
 		isHighScoreFaded = true;
 		
 		model = new HardModel();
@@ -180,7 +186,8 @@ public class GameScreen implements Screen, InputProcessor{
 				game.openLevel(levelid + 1);
 			}
 		});
-		endGameTable.add(nextLevel);
+		if(levelid < 30)
+			endGameTable.add(nextLevel);
 		
 		im = new InputMultiplexer();
 		Array<InputProcessor> processors = new Array<InputProcessor>();
