@@ -54,6 +54,8 @@ public class LevelScreen implements Screen{
 
 	@Override
 	public void show() {
+		game.getAds().showBanner();
+		
 		stage = new Stage(new StretchViewport(800, 480));
 		skin = new Skin(Gdx.files.internal("uitest/uitest.json"), new TextureAtlas(Gdx.files.internal("uitest/uitest.atlas")));
 		

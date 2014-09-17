@@ -39,14 +39,20 @@ import com.badlogic.gdx.Gdx;
 
 public class HardGame extends Game { 
 	private GoogleInterface google;
+	private AdInterface ads;
 	
-	public HardGame(GoogleInterface google){
+	public HardGame(GoogleInterface google, AdInterface ads){
 		super();
 		this.google = google;
+		this.ads = ads;
 	}
 	
 	public GoogleInterface getGoogle(){
 		return google;
+	}
+	
+	public AdInterface getAds(){
+		return ads;
 	}
 	
 	@Override
